@@ -1,46 +1,46 @@
-# Code editors
+# Koodieditorit
 
-A code editor is the place where programmers spend most of their time.
+Ohjelmoijat viettävät suurimman osan ajastaan koodieditorissa.
 
-There are two main types of code editors: IDEs and lightweight editors. Many people use one tool of each type.
+Koodieditoreja on pääasiassa kahdenlaisia: IDE:t ja kevyet editorit. Monet ihmiset käyttävät yhtä työkalua kustakin tyypistä.
 
 ## IDE
 
-The term [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) (Integrated Development Environment) refers to a powerful editor with many features that usually operates on a "whole project." As the name suggests, it's not just an editor, but a full-scale "development environment."
+Termi [IDE](https://fi.wikipedia.org/wiki/Ohjelmointiymp%C3%A4rist%C3%B6) (Integrated Development Environment, suom. integroitu ohjelmointiympäristö) viittaa tehokkaaseen editoriin, joka sisältää monia "koko projektiin" liittyviä toimintoja. Nimensä mukaisesti kyseessä ei ole pelkkä editori vaan kokonainen "ohjelmointiympäristö."
 
-An IDE loads the project (which can be many files), allows navigation between files, provides autocompletion based on the whole project (not just the open file), and integrates with a version management system (like [git](https://git-scm.com/)), a testing environment, and other "project-level" stuff.
+IDE lataa projektin (joka voi sisältää monia tiedostoja), mahdollistaa navigoinnin tiedostojen välillä, tarjoaa kirjoitetun tekstin automaattista täydennystä koko projektin perusteella (ei pelkästään auki olevan tiedoston) sekä integroituu versionhallintajärjestelmään (esim. [git](https://git-scm.com/)), testiympäristöön ja muihin "projektitason" juttuihin.
 
-If you haven't selected an IDE yet, consider the following options:
+Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
+- [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
+- [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
 
-For Windows, there's also "Visual Studio", not to be confused with "Visual Studio Code". "Visual Studio" is a paid and mighty Windows-only editor, well-suited for the .NET platform. It's also good at JavaScript. There's also a free version [Visual Studio Community](https://www.visualstudio.com/vs/community/).
+Windowsille on saatavilla myös "Visual Studio", jota ei ole sama kuin "Visual Studio Code." "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
-Many IDEs are paid, but have a trial period. Their cost is usually negligible compared to a qualified developer's salary, so just choose the best one for you.
+Monet IDE:t ovat maksullisia, mutta niihin on saatavilla ilmaisia kokeilujaksoja. Lisäksi niiden hinta on yleensä mitätön pätevän sovelluskehittäjän palkkaan verrattuna, joten valitse vain sinulle parhaiten sopiva vaihtoehto.
 
-## Lightweight editors
+## Kevyet editorit
 
-"Lightweight editors" are not as powerful as IDEs, but they're fast, elegant and simple.
+"Kevyet editorit" eivät ole yhtä tehokkaita kuin IDE:t, mutta ne ovat nopeita, hienostuneita ja yksinkertaisia.
 
-They are mainly used to open and edit a file instantly.
+Niitä käytetään pääasiassa yksittäisen tiedoston nopeaan avaamiseen ja muokkaamiseen.
 
-The main difference between a "lightweight editor" and an "IDE" is that an IDE works on a project-level, so it loads much more data on start, analyzes the project structure if needed and so on. A lightweight editor is much faster if we need only one file.
+Olennaisin ero "kevyen editorin" ja "IDE:n" välillä on, että IDE toimii projektitasolla eli se lataa käynnistyessään enemmän tietoja, analysoi tarvittaessa projektin rakenteen ja niin edelleen. Kevyt editori on paljon nopeampi, jos käsitellään vain yhtä tiedostoa.
 
-In practice, lightweight editors may have a lot of plugins including directory-level syntax analyzers and autocompleters, so there's no strict border between a lightweight editor and an IDE.
+Käytännössä kevyihin editoreihin voi olla saatavilla monia lisäosia mukaan lukien sellaisia, jotka tekevät kansiotason syntaksin analysointia tai tarjoavat kirjoitetun tekstin automaattista täydennystä, joten editorityyppien välillä ei ole selkeää rajausta.
 
-The following options deserve your attention:
+Seuraavat vaihtoehdot ansaitsevat huomiosi:
 
-- [Atom](https://atom.io/) (cross-platform, free).
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
-- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
-- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+- [Atom](https://atom.io/) (järjestelmäriippumaton, ilmainen).
+- [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
+- [Sublime Text](http://www.sublimetext.com) (järjestelmäriippumaton, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, ilmainen).
+- [Vim](http://www.vim.org/) ja [Emacs](https://www.gnu.org/software/emacs/) ovat myös siistejä, jos tiedät, miten niitä käytetään.
 
-## Let's not argue
+## Ei riidellä
 
-The editors in the lists above are those that either I or my friends whom I consider good developers have been using for a long time and are happy with.
+Ylle listatut editorit ovat sellaisia, joita minä tai hyvinä ohjelmoijina pitämäni ystäväni olemme käyttäneet pitkään ja joihin olemme olleet tyytyväisiä.
 
-There are other great editors in our big world. Please choose the one you like the most.
+Suuressa maailmassamme on muitakin hyviä editoreja. Valitse se, josta pidät eniten.
 
-The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+Editorin valinta, aivan kuten muidenkin työkalujen, on yksilöllinen päätös ja riippuu omista projekteistasi, tavoistasi ja henkilökohtaisista mieltymyksistäsi.
