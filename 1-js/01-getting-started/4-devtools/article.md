@@ -1,63 +1,63 @@
-# Developer console
+# Kehityskonsoli
 
-Code is prone to errors. You will quite likely make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
+Koodi on altis virheille. Tulet todennäköisesti tekemään virheitä.. Tai siis, mitä höpisen? Tulet *takuuvarmasti* tekemään virheitä ainakin, jos olet ihminen etkä [robotti](https://en.wikipedia.org/wiki/Bender_(Futurama)).
 
-But in the browser, users don't see errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+Selaimessa virheitä ei kuitenkaan oletuksena näe. Jos jokin skriptissä menee pieleen, emme näe mikä on rikki emmekä voi korjata sitä.
 
-To see errors and get a lot of other useful information about scripts, "developer tools" have been embedded in browsers.
+Nähdäksemme virheet ja paljon muuta hyödyllistä skripteihin liittyvää, selaimiin on upotettu "kehitystyökaluja".
 
-Most developers lean towards Chrome or Firefox for development because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most developers have a "favorite" browser and switch to others if a problem is browser-specific.
+Useimmat sovelluskehittäjät käyttävät Chromea tai Firefoxia, koska niissä on parhaat kehitystyökalut. Muissakin selaimissa on kehitystyökaluja, mutta ne seuraavat yleensä Chromen ja Firefoxin esimerkkiä. Useimmilla kehittäjillä onkin yksi "lempiselain" ja he käyttävät muita, jos ongelma on selainkohtainen.
 
-Developer tools are potent; they have many features. To start, we'll learn how to open them, look at errors, and run JavaScript commands.
+Kehitystyökalut ovat tehokkaita; niissä on monia toimintoja. Aluksi opimme, miten työkalut saa näkyviin, katsomme virheitä ja ajamme JavaScript -komentoja.
 
 ## Google Chrome
 
-Open the page [bug.html](bug.html).
+Avaa tämä sivu: [bug.html](bug.html).
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+Sivun JavaScript -koodissa on virhe. Se on piilossa tavallisille vierailijoille, joten avataanpa kehitystyökalut, niin näemme sen.
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+Paina `key:F12` tai, jos käytät Macciä, paina `key:Cmd+Opt+J`.
 
-The developer tools will open on the Console tab by default.
+Kehitystyökalut avautuvat oletuksena konsoliin (Console).
 
-It looks somewhat like this:
+Sen pitäisi näyttää suurin piirtein tältä:
 
 ![chrome](chrome.png)
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time but should be similar.
+Työkalujen tarkka ulkoasu riippuu Chromen versiosta. Tarkka ulkoasu muuttuu silloin tällöin, mutta sen pitäisi näyttää samankaltaiselta.
 
-- Here we can see the red-colored error message. In this case, the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
+- Täällä näemme punaisen virhetekstin. Tässä tapauksessa skripti sisältää tuntemattoman komennon "lalala".
+- Oikealla on klikattava linkki lähteeseen `bug.html:12`, jossa näkyy sen rivin numero, jolta virhe löytyy.
 
-Below the error message, there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands. Press `key:Enter` to run them.
+Virhetekstin alla näkyy sininen `>` symboli. Se osoittaa "komentoriviä", johon voimme kirjoittaa JavaScript -komentoja. Paina `key:Enter` suorittaaksesi niitä.
 
-Now we can see errors, and that's enough for a start. We'll come back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
+Näemme nyt virheet, ja se riittää alkuun. Palaamme kehitystyökaluihin myöhemmin ja käymme virheenkorjausta tarkemmin kappaleessa <info:debugging-chrome>.
 
-```smart header="Multi-line input"
-Usually, when we put a line of code into the console, and then press `key:Enter`, it executes.
+```smart header="Monirivinen syöttö"
+Kun syötämme rivin koodia konsoliin ja painamme `key:Enter`, koodi suoritetaan.
 
-To insert multiple lines, press `key:Shift+Enter`. This way one can enter long fragments of JavaScript code.
+Voimme painaa `key:Shift+Enter` syöttääksemme useamman rivin. Näin voimme syöttää pidempiä JavaScript -koodipätkiä.
 ```
 
-## Firefox, Edge, and others
+## Firefox, Edge ja muut
 
-Most other browsers use `key:F12` to open developer tools.
+Suurimmassa osassa selaimista kehittäjätyökalut saa avattua painamalla `key:F12`.
 
-The look & feel of them is quite similar. Once you know how to use one of these tools (you can start with Chrome), you can easily switch to another.
+Niiden ulkoasu ja tuntuma on melko samanlainen. Kun opit käyttämään yhden selaimen työkaluja (voit aloittaa Chromella), toiseen selaimeen vaihtaminen on helppoa.
 
 ## Safari
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
+Safari (Macin selain, jota Windows/Linux eivät tue) on vähän erityinen. Meidän täytyy ensin ottaa "Develop menu" (suom. "kehitysvalikko") käyttöön.
 
-Open Preferences and go to the "Advanced" pane. There's a checkbox at the bottom:
+Avaa "Preferences" (suom. "Asetukset") ja mene kohtaan "Advanced" (suom. "Lisäasetukset"). Alaosasta löytyy valinta:
 
 ![safari](safari.png)
 
-Now `key:Cmd+Opt+C` can toggle the console. Also, note that the new top menu item named "Develop" has appeared. It has many commands and options.
+Nyt näppäinyhdistelmällä `key:Cmd+Opt+C` saa avattua konsolin. Huomaa myös, että yläpalkkiin on ilmestynyt uusi valinta "Develop" (suom. "Kehitä"). Sieltä löytyy monia komentoja ja valintoja.
 
-## Summary
+## Yhteenveto
 
-- Developer tools allow us to see errors, run commands, examine variables, and much more.
-- They can be opened with `key:F12` for most browsers on Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- Kehitystyökalujen avulla voimme nähdä virheet, suorittaa komentoja, tutkia muuttujia ja paljon muuta.
+- Työkalut saa suurimmassa osassa Windows-selaimista auki painamalla `key:F12`. Chrome Macillä vaatii näppäinyhdistelmää `key:Cmd+Opt+J`, Safari `key:Cmd+Opt+C` (kun työkalut on ensin otettu käyttöön).
 
-Now we have the environment ready. In the next section, we'll get down to JavaScript.
+Nyt meillä on kehitysympäristö valmiina. Seuraavassa osiossa paneudumme JavaScriptiin.
