@@ -1,44 +1,44 @@
-# Code structure
+# Koodin rakenne
 
-The first thing we'll study is the building blocks of code.
+Ensimmäisenä opiskelemme koodin rakennuspalikoita.
 
-## Statements
+## Lausekkeet
 
-Statements are syntax constructs and commands that perform actions.
+Lausunnot ovat syntaksirakenteita ja -komentoja, jotka suorittavat toimintoja.
 
-We've already seen a statement, `alert('Hello, world!')`, which shows the message "Hello, world!".
+Olemme jo nähneet yhden lausekkeen: `alert('Hei maailma!')`, joka näyttää viestin "Hei maailma!".
 
-We can have as many statements in our code as we want. Statements can be separated with a semicolon.
+Koodissa voi olla niin monta lauseketta kuin haluamme. Lausekkeet voi erottaa toisistaan puolipisteellä.
 
-For example, here we split "Hello World" into two alerts:
-
-```js run no-beautify
-alert('Hello'); alert('World');
-```
-
-Usually, statements are written on separate lines to make the code more readable:
+Esimerkiksi tässä jaamme "Hei maailma" lausekkeen kahteen lausekkeeseen:
 
 ```js run no-beautify
-alert('Hello');
-alert('World');
+alert('Hei'); alert('maailma');
 ```
 
-## Semicolons [#semicolon]
-
-A semicolon may be omitted in most cases when a line break exists.
-
-This would also work:
+Tavallisesti lausekkeet kirjoitetaan eri riveille, jotta koodia on helpompi lukea:
 
 ```js run no-beautify
-alert('Hello')
-alert('World')
+alert('Hei');
+alert('maailma');
 ```
 
-Here, JavaScript interprets the line break as an "implicit" semicolon. This is called an [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+## Puolipisteet [#semicolon]
 
-**In most cases, a newline implies a semicolon. But "in most cases" does not mean "always"!**
+Puolipisteet voidaan useimmiten jättää kirjoittamatta, jos käytämme rivinvaihtoa.
 
-There are cases when a newline does not mean a semicolon. For example:
+Tämä toimisi myös:
+
+```js run no-beautify
+alert('Hei')
+alert('maailma')
+```
+
+Tässä JavaScript tulkitsee rivinvaihdon "implisiittisenä" puolipisteenä. Tätä kutsutaan [puolipisteen automaattiseksi sijoitukseksi](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+
+**Puolipisteen voi useimmiten korvata rivinvaihdolla, mutta "useimmiten" ei ole sama asia kuin "aina"!**
+
+On myös tapauksia, joissa rivinvaihtoa ei tulkita puolipisteeksi. Esimerkiksi:
 
 ```js run no-beautify
 alert(3 +
@@ -46,114 +46,114 @@ alert(3 +
 + 2);
 ```
 
-The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so the semicolon is not required. And in this case that works as intended.
+Koodin tulos on `6`, koska JavaScript ei tässä tapauksessa sijoita puolipisteitä. Intuitiivisesti on selvää, että merkkiin `"+"` päättyvä rivi on "epätäydellinen lauseke", joten puolipistettä ei tarvita ja tässä tapauksessa homma toimii oletetulla tavalla.
 
-**But there are situations where JavaScript "fails" to assume a semicolon where it is really needed.**
+**On kuitenkin olemassa tilanteita, joissa JavaScript ei osaa olettaa puolipistettä, vaikka sitä oikeasti tarvittaisiin.**
 
-Errors which occur in such cases are quite hard to find and fix.
+Tällaisista tilanteista johtuvia virheitä on vaikea löytää ja korjata.
 
-````smart header="An example of an error"
-If you're curious to see a concrete example of such an error, check this code out:
+````smart header="Esimerkki virheestä"
+Jos olet utelias näkemään konkreettisen esimerkin tällaisesta virheestä, katso alla olevaa koodia:
 
 ```js run
 [1, 2].forEach(alert)
 ```
 
-No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of the code: it shows `1` then `2`.
+Sinun ei tarvitse vielä miettiä, mitä hakasulkeet `[]` ja `forEach` tarkoittaa. Opiskelemme niitä myöhemmin. Nyt voit vain muistaa, että koodi näyttää ensin `1` ja sitten `2`.
 
-Let's add an `alert` before the code and *not* finish it with a semicolon:
+Lisätäänpä koodin alkuun `alert` ja jätetään puolipiste pois:
 
 ```js run no-beautify
-alert("There will be an error")
+alert("Tämä aiheuttaa virheen")
 
 [1, 2].forEach(alert)
 ```
 
-Now if we run the code, only the first `alert` shows, and then we have an error!
+Jos suoritamme koodin, vain ensimmäinen `alert` toimii, minkä jälkeen saamme virheen!
 
-But everything is fine again if we add a semicolon after `alert`:
+Kaikki kuitenkin taas toimii, jos lisäämme puolipisteen ensimmäisen `alert` lausekkeen jälkeen:
 ```js run
-alert("All fine now");
+alert("Kaikki on nyt hyvin");
 
 [1, 2].forEach(alert)  
 ```
 
-Now we have the "All fine now" message followed by `1` and `2`.
+Nyt näemme viestin "Kaikki on nyt hyvin" ja sen jälkeen `1` ja `2`.
 
 
-The error in the no-semicolon variant occurs because JavaScript does not assume a semicolon before square brackets `[...]`.
+Virhe johtuu siitä, että JavaScript ei osaa olettaa puolipistettä ennen hakasulkeita `[...]`.
 
-So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here's how the engine sees it:
+Kun puolipistettä ei sijoiteta automaattisesti, koodia käsitellään kuin siinä olisi vain yksi lauseke. Näin moottori näkee koodin:
 
 ```js run no-beautify
-alert("There will be an error")[1, 2].forEach(alert)
+alert("Tämä aiheuttaa virheen")[1, 2].forEach(alert)
 ```
 
-But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations.
+Lausekkeiden pitäisi kuitenkin olla erilliset ja niiden yhdistyminen ei toimi, joten syntyy virhe. Tämä voi tapahtua muissakin tilanteissa.
 ````
 
-We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let's note once again -- *it is possible* to leave out semicolons most of the time. But it's safer -- especially for a beginner -- to use them.
+Suosittelemme käyttämään puolipisteitä lausekkeiden välissä, vaikka ne olisivatkin erotettu toisistaan rivinvaihdolla. Yhteisö soveltaa tätä sääntöä laajalti. Mainitaan vielä kerran, että puolipisteet -- *on mahdollista* -- jättää pois useimmissa tapauksissa. On kuitenkin turvallisempaa -- varsinkin aloittelijalle -- käyttää niitä.
 
-## Comments [#code-comments]
+## Kommentit [#code-comments]
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+Ajan kuluessa ohjelmista tulee kokoajan monimutkaisempia. Jossain vaiheessa tulee tarpeelliseksi lisätä *kommentteja*, jotka selittävät, miten ja miksi koodi toimii.
 
-Comments can be put into any place of a script. They don't affect its execution because the engine simply ignores them.
+Kommentteja voi sijoittaa mihin tahansa kohtaan skriptissä. Ne eivät vaikuta koodin suoritukseen, koska moottori yksinkertaisesti jättää ne huomioimatta.
 
-**One-line comments start with two forward slash characters `//`.**
+**Yhden rivin kommentit alkavat kahdella vinoviivalla `//`.**
 
-The rest of the line is a comment. It may occupy a full line of its own or follow a statement.
+Loput rivistä luetaan kommentiksi. Kommentti voi olla kokonaan oma rivinsä tai se voidaan sijoittaa lausekkeen perään.
 
-Like here:
+Kuten tässä:
 ```js run
-// This comment occupies a line of its own
-alert('Hello');
+// Tämä koko rivi on pelkkää kommenttia
+alert('Hei');
 
-alert('World'); // This comment follows the statement
+alert('maailma'); // Tämä kommentti on sijoitettu lausekkeen perään
 ```
 
-**Multiline comments start with a forward slash and an asterisk <code>/&#42;</code> and end with an asterisk and a forward slash <code>&#42;/</code>.**
+**Monen rivin pituiset kommentit aloitetaan vinoviivalla ja asteriskilla <code>/&#42;</code> ja päättyvät asteriskilla ja vinoviivalla <code>&#42;/</code>.**
 
-Like this:
+Kuten tässä:
 
 ```js run
-/* An example with two messages.
-This is a multiline comment.
+/* Esimerkki, jossa on kaksi riviä.
+Tämä on monirivinen kommentti.
 */
-alert('Hello');
-alert('World');
+alert('Hei');
+alert('maailma');
 ```
 
-The content of comments is ignored, so if we put code inside <code>/&#42; ... &#42;/</code>, it won't execute.
+Kommenttien sisältö jätetään huomioimatta, joten niiden sisälle kirjoitettua koodia <code>/&#42; ... &#42;/</code> ei suoriteta.
 
-Sometimes it can be handy to temporarily disable a part of code:
+Tämä voi joskus olla kätevää, jos haluamme väliaikaisesti ottaa koodinpätkän pois käytöstä:
 
 ```js run
-/* Commenting out the code
-alert('Hello');
+/* Pois kommentoitua koodia
+alert('Hei');
 */
-alert('World');
+alert('maailma');
 ```
 
-```smart header="Use hotkeys!"
-In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+```smart header="Käytä pikanäppäimiä!"
+Useimmissa editoreissa koodirivin voi kommentoida pois käytöstä painamalla `key:Ctrl+/` pikanäppäimiä yhden rivin kommenteille ja esimerkiksi `key:Ctrl+Shift+/` monirivisille kommenteille (valitse koodinpätkä ja paina pikanäppäimiä). Jos käytät Macciä, kokeile käyttää `key:Cmd` näppäintä `key:Ctrl` näppäimen sijaan ja `key:Option` näppäintä `key:Shift` näppäimen sijaan.
 ```
 
-````warn header="Nested comments are not supported!"
-There may not be `/*...*/` inside another `/*...*/`.
+````warn header="Sisäkkäisiä kommentteja ei tueta!"
+Kommentin `/*...*/` sisällä ei voi olla toista kommenttia `/*...*/`.
 
-Such code will die with an error:
+Tällainen koodi kaatuu virheeseen:
 
 ```js run no-beautify
 /*
-  /* nested comment ?!? */
+  /* sisäkkäinen kommentti ?!? */
 */
-alert( 'World' );
+alert( 'maailma' );
 ```
 ````
 
-Please, don't hesitate to comment your code.
+Älä epäröi kommentoida koodiasi.
 
-Comments increase the overall code footprint, but that's not a problem at all. There are many tools which minify code before publishing to a production server. They remove comments, so they don't appear in the working scripts. Therefore, comments do not have negative effects on production at all.
+Kommentit kasvattavat koodin jalanjälkeä, mutta se ei ole mikään ongelma. On olemassa monia työkaluja, jotka lyhentävät koodia ennen julkaisemista tuotantopalvelimelle. Ne poistavat kommentit, jotta ne eivät näy lopullisissa skripteissä. Kommenteilla ei siis ole mitään kielteistä vaikutusta lopulliseen koodiin.
 
-Later in the tutorial there will be a chapter <info:code-quality> that also explains how to write better comments.
+Myöhemmin tässä tutoriaalissa on kappale nimeltä <info:code-quality>, jossa käydään läpi myös hyvien kommenttien kirjoittamista.
