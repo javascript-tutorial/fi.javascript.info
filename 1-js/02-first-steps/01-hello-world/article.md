@@ -1,17 +1,17 @@
-# Hello, world!
+# Hei maailma! Hello, world!
 
-This part of the tutorial is about core JavaScript, the language itself.
+Tämä osa tutoriaalista keskittyy JavaScriptin ytimeen eli kieleen itseensä.
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+Tarvitsemme kuitenkin ympäristön, jossa voimme suorittaa skriptimme ja, koska tämä kirja on netissä, selain on hyvä valinta. Pidämme selainkohtaisten komentojen (kuten `alert`) määrän minimissä, jottei sinun tarvitse käyttää niiden oppimiseen aikaan, jos suunnittelet keskittyväsi johonkin muuhun ympäristöön (kuten Node.js) Keskitymme selaimen JavaScriptiin tämän tutoriaalin [seuraavassa osassa](/ui).
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+Katsotaan ensin, miten saamme liitettyä skriptin nettisivuun. Palvelinpuolen ympäristöissä (kuten Node.js) voimme suorittaa skriptin esimerkiksi komennolla`"node my.js"`.
 
 
-## The "script" tag
+## "script" tunniste
 
-JavaScript programs can be inserted almost anywhere into an HTML document using the `<script>` tag.
+JavaScript -ohjelmia voi sijoittaa lähes minne tahansa HTML-dokumenttiin käyttämällä `<script>` tunnistetta.
 
-For instance:
+Esimerkiksi:
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,15 +19,15 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+  <p>Ennen skriptiä...</p>
 
 *!*
   <script>
-    alert( 'Hello, world!' );
+    alert( 'Hei maailma!' );
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...Skriptin jälkeen.</p>
 
 </body>
 
@@ -35,20 +35,20 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+Voit suorittaa esimerkin skriptin painamalla "Play" painiketta yllä olevan laatikon oikeassa yläkulmassa.
 ```
 
-The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+`<script>` tunniste sisältää JavaScript-koodin, joka suoritetaan automaattisesti, kun selain prosessoi tunnisteen.
 
 
-## Modern markup
+## Moderni merkintätapa
 
-The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
+`<script>` tunnisteeseen liittyy muutamia attribuutteja, joita käytetään nykyään harvoin. Niitä näkyy kuitenkin vanhassa koodissa:
 
-The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
-: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
+`type` (suom. tyyppi) attribuutti: <code>&lt;script <u>type</u>=...&gt;</code>
+: Vanha HTML standardi, HTML4, edellytti `type` attribuutin käyttöä. Useimmiten attribuutti sai arvon `type="text/javascript"`, mutta tätä ei enää edellytetä. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
 
-The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
+`language` (suom. kieli) attribuutti: <code>&lt;script <u>language</u>=...&gt;</code>
 : This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
 
 Comments before and after scripts.

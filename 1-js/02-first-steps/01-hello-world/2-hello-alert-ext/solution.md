@@ -1,8 +1,8 @@
-The HTML code:
+HTML-koodi:
 
 [html src="index.html"]
 
-For the file `alert.js` in the same folder:
+Tiedostossa nimeltä `alert.js`, samassa kansiossa:
 
 [js src="alert.js"]
 
