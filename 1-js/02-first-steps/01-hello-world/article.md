@@ -1,4 +1,4 @@
-# Hei maailma! Hello, world!
+# Hei maailma!
 
 Tämä osa tutoriaalista keskittyy JavaScriptin ytimeen eli kieleen itseensä.
 
