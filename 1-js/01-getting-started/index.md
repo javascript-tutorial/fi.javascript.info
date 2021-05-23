@@ -1,3 +1,3 @@
-# An introduction
+# Johdanto
 
-About the JavaScript language and the environment to develop with it.
+Tietoa JavaScript -kielestä ja sen kehitysympäristöstä.

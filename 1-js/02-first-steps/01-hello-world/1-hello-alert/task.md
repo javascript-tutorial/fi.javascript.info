@@ -2,11 +2,11 @@ importance: 5
 
 ---
 
-# Show an alert
+# Näytä alert (ponnahdusikkuna)
 
-Create a page that shows a message "I'm JavaScript!".
+Luo sivu, joka näyttää viestin "Minä olen JavaScript!".
 
-Do it in a sandbox, or on your hard drive, doesn't matter, just ensure that it works.
+Ei ole väliä teetkö sen hiekkalaatikossa vai omalla kovalevylläsi. Varmista vain, että se toimii.
 
 [demo src="solution"]
 

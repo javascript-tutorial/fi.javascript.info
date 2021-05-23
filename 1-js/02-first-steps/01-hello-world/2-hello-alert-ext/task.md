@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Show an alert with an external script
+# Näytä ponnahdusikkuna (alert) erillisen skriptin avulla
 
-Take the solution of the previous task <info:task/hello-alert>. Modify it by extracting the script content into an external file `alert.js`, residing in the same folder.
+Ota edellisen tehtävän ratkaisu <info:task/hello-alert> ja siirrä skriptin sisältö erilliseen tiedostoon nimeltä `alert.js`, joka sijaitsee samassa kansiossa.
 
-Open the page, ensure that the alert works.
+Avaa sivu ja varmista, että ponnahdusikkuna toimii.

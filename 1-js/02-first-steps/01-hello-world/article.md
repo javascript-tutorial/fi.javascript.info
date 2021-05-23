@@ -1,17 +1,17 @@
-# Hello, world!
+# Hei maailma! Hello, world!
 
-This part of the tutorial is about core JavaScript, the language itself.
+Tämä osa tutoriaalista keskittyy JavaScriptin ytimeen eli kieleen itseensä.
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+Tarvitsemme kuitenkin ympäristön, jossa voimme suorittaa skriptimme ja, koska tämä kirja on netissä, selain on hyvä valinta. Pidämme selainkohtaisten komentojen (kuten `alert`) määrän minimissä, jottei sinun tarvitse käyttää niiden oppimiseen aikaan, jos suunnittelet keskittyväsi johonkin muuhun ympäristöön (kuten Node.js) Keskitymme selaimen JavaScriptiin tämän tutoriaalin [seuraavassa osassa](/ui).
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+Katsotaan ensin, miten saamme liitettyä skriptin nettisivuun. Palvelinpuolen ympäristöissä (kuten Node.js) voimme suorittaa skriptin esimerkiksi komennolla`"node my.js"`.
 
 
-## The "script" tag
+## "script" tunniste
 
-JavaScript programs can be inserted almost anywhere into an HTML document using the `<script>` tag.
+JavaScript -ohjelmia voi sijoittaa lähes minne tahansa HTML-dokumenttiin käyttämällä `<script>` tunnistetta.
 
-For instance:
+Esimerkiksi:
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,15 +19,15 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+  <p>Ennen skriptiä...</p>
 
 *!*
   <script>
-    alert( 'Hello, world!' );
+    alert( 'Hei maailma!' );
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...Skriptin jälkeen.</p>
 
 </body>
 
@@ -35,24 +35,24 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+Voit suorittaa esimerkin skriptin painamalla "Play" painiketta yllä olevan laatikon oikeassa yläkulmassa.
 ```
 
-The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+`<script>` tunniste sisältää JavaScript-koodin, joka suoritetaan automaattisesti, kun selain prosessoi tunnisteen.
 
 
-## Modern markup
+## Moderni merkintätapa
 
-The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
+`<script>` tunnisteeseen liittyy muutamia attribuutteja, joita käytetään nykyään harvoin. Niitä näkyy kuitenkin vanhassa koodissa:
 
-The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
-: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
+`type` (suom. tyyppi) attribuutti: <code>&lt;script <u>type</u>=...&gt;</code>
+: Vanha HTML standardi, HTML4, edellytti `type` attribuutin käyttöä. Useimmiten attribuutti sai arvon `type="text/javascript"`, mutta sen käyttöä ei enää edellytetä. Nykyinen HTML standardi on myös täysin muuttanut attribuutin tarkoituksen. Nyt sitä voidaan käyttää JavaScript-moduulien yhteydessä. Se on kuitenkin edistynyt aihe, josta puhumme myöhemmin tässä tutoriaalissa.
 
-The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
-: This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
+`language` (suom. kieli) attribuutti: <code>&lt;script <u>language</u>=...&gt;</code>
+: Tätä attribuuttia oli tarkoitus käyttää skriptin kielen osoittamiseen. Attribuutti ei kuitenkaan käy enää järkeen, koska JavaScript on oletuskieli. Näin ollen sitä ei tarvitse käyttää.
 
-Comments before and after scripts.
-: In really ancient books and guides, you may find comments inside `<script>` tags, like this:
+Kommenttit ennen skriptejä ja niiden jälkeen.
+: Ikivanhoissa kirjoissa tai oppaissa saattaa näkyä kommentteja `<script>` tunnisteen sisällä tähän tapaan:
 
     ```html no-beautify
     <script type="text/javascript"><!--
@@ -60,28 +60,28 @@ Comments before and after scripts.
     //--></script>
     ```
 
-    This trick isn't used in modern JavaScript. These comments hide JavaScript code from old browsers that didn't know how to process the `<script>` tag. Since browsers released in the last 15 years don't have this issue, this kind of comment can help you identify really old code.
+    Tätä temppua ei enää käytetä. Sen tarkoituksena oli piilottaa JavaScript koodi vanhoilta selaimilta, jotka eivät ymmärtäneet miten `<script>` tunnisteita prosessoidaan. Koska tämä ongelma ei koske yhtäkään viimeisen 15 vuoden aikana julkaistua selainta, tällaisen kommentin perusteella voi tunnistaa erittäin vanhaa koodia.
 
 
-## External scripts
+## Ulkoiset skriptit
 
-If we have a lot of JavaScript code, we can put it into a separate file.
+Jos kirjoitamme paljon JavaScript koodia, voimme kirjoittaa sen erilliseen tiedostoon.
 
-Script files are attached to HTML with the `src` attribute:
+Skriptitiedostot liitetään HTML:ään `src` (suom. lähde) attribuutilla:
 
 ```html
-<script src="/path/to/script.js"></script>
+<script src="/polku/tiedostoon/script.js"></script>
 ```
 
-Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"` would mean a file `"script.js"` in the current folder.
+Yllä, `/polku/tiedostoon/script.js` tarkoittaa absoluuttista tiedostopolkua skriptiin sivuston juuresta (root). Polun voi kirjoittaa myös nykyisen sivun suhteen. Esimerkiksi `src="script.js"` tarkoittaisi tiedostoa nimeltä `"script.js"` nykyisessä kansiossa.
 
-We can give a full URL as well. For instance:
+Voimme kirjoittaa myös koko URL-osoitteen. Esimerkiksi:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
 ```
 
-To attach several scripts, use multiple tags:
+Voit käyttäää useampaa tunnistetta liittääksesi useamman skriptin:
 
 ```html
 <script src="/js/script1.js"></script>
@@ -90,29 +90,29 @@ To attach several scripts, use multiple tags:
 ```
 
 ```smart
-As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+Perussääntönä voidaan pitää, että vain erittäin yksinkertaisia skriptejä kirjoitetaan HTML:ään. Muut skriptit kirjoitetaan erillisiin tiedostoihin.
 
-The benefit of a separate file is that the browser will download it and store it in its [cache](https://en.wikipedia.org/wiki/Web_cache).
+Erillisen tiedoston hyötynä on, että selain lataa ja tallentaa sen [välimuistiin](https://fi.wikipedia.org/wiki/V%C3%A4limuisti).
 
-Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+Jatkossa kaikki sivut, joihin on liitetty sama skripti, voivat lukea sen suoraan välimuistista lataamisen sijaan ja tiedosto itseasiassa ladataan vain kerran.
 
-That reduces traffic and makes pages faster.
+Tämä vähentää liikennettä ja tekee sivuista nopeampia.
 ```
 
-````warn header="If `src` is set, the script content is ignored."
-A single `<script>` tag can't have both the `src` attribute and code inside.
+````warn header="Jos `src` on määritelty, tunnisteiden välistä koodia ei oteta huomioon."
+Yksittäinen `<script>` tunniste ei voi samaan aikaan käyttää `src` attribuuttia ja koodia tunnisteiden välissä.
 
-This won't work:
+Tämä ei toimi:
 
 ```html
 <script *!*src*/!*="file.js">
-  alert(1); // the content is ignored, because src is set
+  alert(1); // sisältöä ei huomioida, koska src on määritelty
 </script>
 ```
 
-We must choose either an external `<script src="…">` or a regular `<script>` with code.
+Aina on valittava ulkoinen `<script src="…">` tai tavallinen `<script>`, jonka sisällä on koodia.
 
-The example above can be split into two scripts to work:
+Yllä oleva esimerkki saadaan toimimaan käyttämällä kahta tunnistetta:
 
 ```html
 <script src="file.js"></script>
@@ -122,11 +122,11 @@ The example above can be split into two scripts to work:
 ```
 ````
 
-## Summary
+## Yhteenveto
 
-- We can use a `<script>` tag to add JavaScript code to a page.
-- The `type` and `language` attributes are not required.
-- A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
+- Voimme käyttää `<script>` tunnistetta lisääksemme JavaScript koodia sivulle.
+- `type` ja `language` attribuutteja ei tarvita.
+- Erillisessä tiedostossa olevaan skriptiin voidaan viitata näin: `<script src="polku/tiedostoon/script.js"></script>`.
 
 
-There is much more to learn about browser scripts and their interaction with the webpage. But let's keep in mind that this part of the tutorial is devoted to the JavaScript language, so we shouldn't distract ourselves with browser-specific implementations of it. We'll be using the browser as a way to run JavaScript, which is very convenient for online reading, but only one of many.
+Skripteissä ja niiden vuorovaikutuksessa nettisivun kanssa riittää opittavaa. Pidetään kuitenkin mielessä, että tämä osa tutoriaalista on omistettu JavaScript ohjelmointikielelle, joten meidän ei pidä keskittyä selainkohtaisiin asioihin. Käytämme kuitenkin selainta JavaScriptin suorittamiseen, mikä on erittäin kätevää tässä yhteydessä, mutta silti vain yksi mahdollisista tavoista.
