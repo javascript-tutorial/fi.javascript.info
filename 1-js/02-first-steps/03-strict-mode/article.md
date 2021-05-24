@@ -1,89 +1,89 @@
-# The modern mode, "use strict"
+# Moderni tila, "use strict"
 
-For a long time, JavaScript evolved without compatibility issues. New features were added to the language while old functionality didn't change.
+JavaScript kehittyi pitkään ilman yhteensopivuusongelmia. Uusia toimintoja lisättiin samalla kun vanhat pysyivät ennallaan.
 
-That had the benefit of never breaking existing code. But the downside was that any mistake or an imperfect decision made by JavaScript's creators got stuck in the language forever.
+Tämän etuna oli, että vanha koodi ei koskaan lakannut toimimasta. Haittapuolena oli kuitenkin se, että jokainen JavaScriptin kehittäjien virhe tai epätäydellinen päätös jäi kieleen pysyvästi.
 
-This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: `"use strict"`.
+Tämä muuttui vuonna 2009, kun ECMAScript 5 (ES5) ilmestyi. Se lisäsi kieleen toimintoja ja samalla muutti joitain olemassa olevista toiminnoista. Vanhan koodin toimimisen varmistamiseksi, muokkaukset ovat oletuksena poissa käytöstä. Ne on erikseen otettava käyttöön `"use strict"` (suom. "käytä täsmällistä") direktiivillä.
 
 ## "use strict"
 
-The directive looks like a string: `"use strict"` or `'use strict'`. When it is located at the top of a script, the whole script works the "modern" way.
+Direktiivi näyttää merkkijonolta: `"use strict"` tai `'use strict'`. Kun se sijoitetaan skriptin alkuun, koko skripti toimii "modernilla" tavalla.
 
-For example:
+Esimerkiksi:
 
 ```js
 "use strict";
 
-// this code works the modern way
+// tämä koodi toimii modernilla tavalla
 ...
 ```
 
-Quite soon we're going to learn functions (a way to group commands), so let's note in advance that `"use strict"` can be put at the beginning of a function. Doing that enables strict mode in that function only. But usually people use it for the whole script.
+Tulemme pian oppimaan funktioista (tapa ryhmitellä komentoja), joten mainitaan jo etukäteen, että `"use strict"` toimii myös funktioiden alussa. Tällöin strict-tila on käytössä vain kyseisessä funktiossa. Useimmiten direktiiviä käytetään kuitenkin koko skriptille.
 
-````warn header="Ensure that \"use strict\" is at the top"
-Please make sure that `"use strict"` is at the top of your scripts, otherwise strict mode may not be enabled.
+````warn header="Varmista, että \"use strict\" on heti alussa"
+Pidä huolta, että `"use strict"` on sijoitettu heti skriptin alkuun. Muussa tapauksessa strict-tilaa ei välttämättä oteta käyttöön.
 
-Strict mode isn't enabled here:
+Strict-tila on käytössä tässä:
 
 ```js no-strict
-alert("some code");
-// "use strict" below is ignored--it must be at the top
+alert("jotain koodia");
+// "use strict" alla jätetään huomioimatta, sen on oltava heti alussa
 
 "use strict";
 
-// strict mode is not activated
+// strict-tila ei ole käytössä
 ```
 
-Only comments may appear above `"use strict"`.
+Vain kommentteja voi sijoittaa `"use strict"` direktiivin yläpuolelle.
 ````
 
-```warn header="There's no way to cancel `use strict`"
-There is no directive like `"no use strict"` that reverts the engine to old behavior.
+```warn header="Strict-tilaa ei voi peruuttaa"
+Ei ole olemassa direktiiviä kuten `"no use strict"` (suom. "ei-käytä täsmällistä"), joka palauttaisi moottorin vanhaan tapaan.
 
-Once we enter strict mode, there's no going back.
+Kun otamme strict-tilan käyttöön, emme voi perua sitä.
 ```
 
-## Browser console
+## Selaimen konsoli
 
-When you use a [developer console](info:devtools) to run code, please note that it doesn't `use strict` by default.
+Muista, että strict-tila ei ole oletuksena käytössä, kun käytät [kehityskonsolia](info:devtools).
 
-Sometimes, when `use strict` makes a difference, you'll get incorrect results.
+Joissain tilanteissa, joihin `use strict` vaikuttaa, voit saada vääränlaisia tuloksia.
 
-So, how to actually `use strict` in the console?
+No, miten strict-tilaa käytetään konsolissa?
 
-First, you can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+Voit kokeilla ensin painaa `key:Shift+Enter` kirjoittaaksesi usealle riville ja kirjoittaa alkuun `use strict`, tähän tapaan:
 
 ```js
-'use strict'; <Shift+Enter for a newline>
-//  ...your code
-<Enter to run>
+'use strict'; <rivinvaihto painamalla Shift+Enter>
+//  ...sinun koodisi
+<koodin suoritus painamalla Enter>
 ```
 
-It works in most browsers, namely Firefox and Chrome.
+Tämä toimii useimmissa selaimissa, ainakin Firefoxissa and Chromessa.
 
-If it doesn't, e.g. in an old browser, there's an ugly, but reliable way to ensure `use strict`. Put it inside this kind of wrapper:
+Jos tämä ei toimi, esimerkiksi vanhassa selaimessa, voit käyttää rumaa, mutta varmaa tapaa. Sijoita `use strict` tällä tapaa:
 
 ```js
 (function() {
   'use strict';
 
-  // ...your code here...
+  // ...sinun koodisi tähän...
 })()
 ```
 
-## Should we "use strict"?
+## Pitääkö strict-tilaa käyttää?
 
-The question may sound obvious, but it's not so.
+Tämä saattaa vaikuttaa itsestäänselvältä, mutta se ei ole.
 
-One could recommend to start scripts with `"use strict"`... But you know what's cool?
+Joku voi suositella, että skriptien alkuun lisätään `"use strict"`... Mutta tiedätkö mikä on siistiä?
 
-Modern JavaScript supports "classes" and "modules" - advanced language structures (we'll surely get to them), that enable `use strict` automatically. So we don't need to add the `"use strict"` directive, if we use them.
+Moderni JavaScript tukee olioita (class) ja moduuleja (module) - kielen edistyneitä rakenteita (tutustumme niihin tietysti myöhemmin), jotka automaattiseti ottavat käyttöön strict-tilan. Meidän ei siis tarvitse käyttää `"use strict"` direktiivitä, jos käytämme niitä.
 
-**So, for now `"use strict";` is a welcome guest at the top of your scripts. Later, when your code is all in classes and modules, you may omit it.**
+**Eli toistaiseksi `"use strict";` on tervetullut vieras skriptiesi alussa. Myöhemmin, kun koodisi on olioissa ja moduuleissa, voit jättää sen pois.**
 
-As of now, we've got to know about `use strict` in general.
+Olemme nyt tutustuneet strict-tilaan yleisesti.
 
-In the next chapters, as we learn language features, we'll see the differences between the strict and old modes. Luckily, there aren't many and they actually make our lives better.
+Myöhemminssä kappaleissa, kun opimme lisää JavaScriptista, näemme strict-tilan ja vanhan tilan eroavaisuuksia paremmin. Onneksi niitä ei ole kovin paljon ja ne itseasiassa tekevät elämästämme helpompaa.
 
-All examples in this tutorial assume strict mode unless (very rarely) specified otherwise.
+Kaikki tämän tutoriaalin esimerkit olettavat strict-tilan olevan käytössä ellei (todella harvinaisissa tapauksissa) muuta ole mainittu.
