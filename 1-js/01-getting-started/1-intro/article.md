@@ -24,9 +24,15 @@ Selaimeen on upotettu moottori, jota kutsutaan joskus "JavaScript-virtuaalikonee
 
 Eri moottoreilla on omia kutsumanimiä. Esimerkiksi:
 
+<<<<<<< HEAD
 - [V8](https://fi.wikipedia.org/wiki/V8_(JavaScript-moottori)) -- Chromessa ja Operassa.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefoxissa.
 - ...Lisäksi on muitakin kutsumanimiä kuten "Chakra" IE:lle, "ChakraCore" Microsoft Edgelle, "Nitro" ja "SquirrelFish" Safarille, jne.
+=======
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
+- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 Yllä luetellut termit on hyvä muistaa, koska niitä käytetään internetin sovelluskehitykseen liittyvissä artikkeleissa. Me tulemme myös käyttämään niitä. Jos esimerkiksi "V8 tukee toimintoa X", se todennäköisesti toimii Chromessa ja Operassa.
 

@@ -46,7 +46,11 @@ alert(3 +
 + 2);
 ```
 
+<<<<<<< HEAD
 Koodin tulos on `6`, koska JavaScript ei tässä tapauksessa sijoita puolipisteitä. Intuitiivisesti on selvää, että merkkiin `"+"` päättyvä rivi on "epätäydellinen lauseke", joten puolipistettä ei tarvita ja tässä tapauksessa homma toimii oletetulla tavalla.
+=======
+The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so a semicolon there would be incorrect. And in this case, that works as intended.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 **On kuitenkin olemassa tilanteita, joissa JavaScript ei osaa olettaa puolipistettä, vaikka sitä oikeasti tarvittaisiin.**
 
@@ -56,28 +60,43 @@ Tällaisista tilanteista johtuvia virheitä on vaikea löytää ja korjata.
 Jos olet utelias näkemään konkreettisen esimerkin tällaisesta virheestä, katso alla olevaa koodia:
 
 ```js run
-[1, 2].forEach(alert)
+alert("Hello");
+
+[1, 2].forEach(alert);
 ```
 
+<<<<<<< HEAD
 Sinun ei tarvitse vielä miettiä, mitä hakasulkeet `[]` ja `forEach` tarkoittaa. Opiskelemme niitä myöhemmin. Nyt voit vain muistaa, että koodi näyttää ensin `1` ja sitten `2`.
 
 Lisätäänpä koodin alkuun `alert` ja jätetään puolipiste pois:
 
 ```js run no-beautify
 alert("Tämä aiheuttaa virheen")
+=======
+No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of running the code: it shows `Hello`, then `1`, then `2`.
 
-[1, 2].forEach(alert)
+Now let's remove the semicolon after the `alert`:
+
+```js run no-beautify
+alert("Hello")
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
+
+[1, 2].forEach(alert);
 ```
 
+<<<<<<< HEAD
 Jos suoritamme koodin, vain ensimmäinen `alert` toimii, minkä jälkeen saamme virheen!
 
 Kaikki kuitenkin taas toimii, jos lisäämme puolipisteen ensimmäisen `alert` lausekkeen jälkeen:
 ```js run
 alert("Kaikki on nyt hyvin");
+=======
+The difference compared to the code above is only one character: the semicolon at the end of the first line is gone.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
-[1, 2].forEach(alert)  
-```
+If we run this code, only the first `Hello` shows (and there's an error, you may need to open the console to see it). There are no numbers any more.
 
+<<<<<<< HEAD
 Nyt näemme viestin "Kaikki on nyt hyvin" ja sen jälkeen `1` ja `2`.
 
 
@@ -90,6 +109,19 @@ alert("Tämä aiheuttaa virheen")[1, 2].forEach(alert)
 ```
 
 Lausekkeiden pitäisi kuitenkin olla erilliset ja niiden yhdistyminen ei toimi, joten syntyy virhe. Tämä voi tapahtua muissakin tilanteissa.
+=======
+That's because JavaScript does not assume a semicolon before square brackets `[...]`. So, the code in the last example is treated as a single statement.
+
+Here's how the engine sees it:
+
+```js run no-beautify
+alert("Hello")[1, 2].forEach(alert);
+```
+
+Looks weird, right? Such merging in this case is just wrong. We need to put a semicolon after `alert` for the code to work correctly.
+
+This can happen in other situations also.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 ````
 
 Suosittelemme käyttämään puolipisteitä lausekkeiden välissä, vaikka ne olisivatkin erotettu toisistaan rivinvaihdolla. Yhteisö soveltaa tätä sääntöä laajalti. Mainitaan vielä kerran, että puolipisteet -- *on mahdollista* -- jättää pois useimmissa tapauksissa. On kuitenkin turvallisempaa -- varsinkin aloittelijalle -- käyttää niitä.
