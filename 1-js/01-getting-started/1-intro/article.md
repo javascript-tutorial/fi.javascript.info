@@ -26,7 +26,7 @@ Eri moottoreilla on omia kutsumanimiä. Esimerkiksi:
 
 - [V8](https://fi.wikipedia.org/wiki/V8_(JavaScript-moottori)) -- Chromessa ja Operassa.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefoxissa.
-- ...Lisäksi on muitakin kutsumanimiä kuten "Chakra" IE:lle, "ChakraCore" Microsoft Edgelle, "Nitro" ja "SquirrelFish" Safarille, jne.
+- ...Lisäksi on muitakin kutsumanimiä kuten "Chakra" IE:lle, "JavaScriptCore", "Nitro" ja "SquirrelFish" Safarille, jne.
 
 Yllä luetellut termit on hyvä muistaa, koska niitä käytetään internetin sovelluskehitykseen liittyvissä artikkeleissa. Me tulemme myös käyttämään niitä. Jos esimerkiksi "V8 tukee toimintoa X", se todennäköisesti toimii Chromessa ja Operassa.
 

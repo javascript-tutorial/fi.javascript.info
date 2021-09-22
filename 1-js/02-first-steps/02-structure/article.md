@@ -46,7 +46,7 @@ alert(3 +
 + 2);
 ```
 
-Koodin tulos on `6`, koska JavaScript ei tässä tapauksessa sijoita puolipisteitä. Intuitiivisesti on selvää, että merkkiin `"+"` päättyvä rivi on "epätäydellinen lauseke", joten puolipistettä ei tarvita ja tässä tapauksessa homma toimii oletetulla tavalla.
+Koodin tulos on `6`, koska JavaScript ei tässä tapauksessa sijoita puolipisteitä. Intuitiivisesti on selvää, että merkkiin `"+"` päättyvä rivi on "epätäydellinen lauseke", joten olisi väärin käyttää tässä puolipistettä ja tässä tapauksessa homma toimii oletetulla tavalla.
 
 **On kuitenkin olemassa tilanteita, joissa JavaScript ei osaa olettaa puolipistettä, vaikka sitä oikeasti tarvittaisiin.**
 
@@ -56,40 +56,36 @@ Tällaisista tilanteista johtuvia virheitä on vaikea löytää ja korjata.
 Jos olet utelias näkemään konkreettisen esimerkin tällaisesta virheestä, katso alla olevaa koodia:
 
 ```js run
-[1, 2].forEach(alert)
+alert("Hello");
+
+[1, 2].forEach(alert);
 ```
 
-Sinun ei tarvitse vielä miettiä, mitä hakasulkeet `[]` ja `forEach` tarkoittaa. Opiskelemme niitä myöhemmin. Nyt voit vain muistaa, että koodi näyttää ensin `1` ja sitten `2`.
+Sinun ei tarvitse vielä miettiä, mitä hakasulkeet `[]` ja `forEach` tarkoittaa. Opiskelemme niitä myöhemmin. Nyt voit vain muistaa, että koodi näyttää ensin `Hello`, sitten `1` ja sitten `2`.
 
-Lisätäänpä koodin alkuun `alert` ja jätetään puolipiste pois:
+Jätetäänpä sitten puolipiste pois `alert` komennon jälkeen:
 
 ```js run no-beautify
-alert("Tämä aiheuttaa virheen")
+alert("Hello")
 
-[1, 2].forEach(alert)
+[1, 2].forEach(alert);
 ```
 
-Jos suoritamme koodin, vain ensimmäinen `alert` toimii, minkä jälkeen saamme virheen!
+Tämän ja ylempänä olevan koodin välillä on vain yhden merkin ero: ensimmäisen rivin perästä puuttuu puolipiste.
 
-Kaikki kuitenkin taas toimii, jos lisäämme puolipisteen ensimmäisen `alert` lausekkeen jälkeen:
-```js run
-alert("Kaikki on nyt hyvin");
+Jos suoritamme tämän koodin, vain ensimmäine `Hello` näkyy (minkä jälkeen on virhe, saatat joutua avaamaan konsolin nähdäksesi sen). Enää ei näy numeroita.
 
-[1, 2].forEach(alert)  
-```
+Tämä johtuu siitä, että JavaScript ei osaa olettaa puolipistettä ennen hakasulkeita `[...]`. Tällöin edellisen esimerkin koodia käsitellään yhtenä lausekkeena.
 
-Nyt näemme viestin "Kaikki on nyt hyvin" ja sen jälkeen `1` ja `2`.
-
-
-Virhe johtuu siitä, että JavaScript ei osaa olettaa puolipistettä ennen hakasulkeita `[...]`.
-
-Kun puolipistettä ei sijoiteta automaattisesti, koodia käsitellään kuin siinä olisi vain yksi lauseke. Näin moottori näkee koodin:
+Näin moottori näkee koodin:
 
 ```js run no-beautify
-alert("Tämä aiheuttaa virheen")[1, 2].forEach(alert)
+alert("Hello")[1, 2].forEach(alert)
 ```
 
-Lausekkeiden pitäisi kuitenkin olla erilliset ja niiden yhdistyminen ei toimi, joten syntyy virhe. Tämä voi tapahtua muissakin tilanteissa.
+Eikö näytäkkin kummalliselta? Tällainen yhdistyminen on yksinkertaisesti väärin. Meidän on sijoitettava puolipiste `alert` komennon perään, jotta koodi toimisi oikein.
+
+Näin voi tapahtua muissakin tilanteissa.
 ````
 
 Suosittelemme käyttämään puolipisteitä lausekkeiden välissä, vaikka ne olisivatkin erotettu toisistaan rivinvaihdolla. Yhteisö soveltaa tätä sääntöä laajalti. Mainitaan vielä kerran, että puolipisteet -- *on mahdollista* -- jättää pois useimmissa tapauksissa. On kuitenkin turvallisempaa -- varsinkin aloittelijalle -- käyttää niitä.
