@@ -1,7 +1,7 @@
-In the code below, each line corresponds to the item in the task list.
+Alla olevassa koodissa kukin rivi vastaa tehtävänannon kohtia.
 
 ```js run
-let admin, name; // can declare two variables at once
+let admin, name; // kaksi muuttujaa voi esitellä kerralla
 
 name = "John";
 

@@ -1,21 +1,21 @@
-## The variable for our planet
+## Muuttuja planeettamme nimelle
 
-That's simple:
+Tämä on yksinkertaista:
 
 ```js
 let ourPlanetName = "Earth";
 ```
 
-Note, we could use a shorter name `planet`, but it might not be obvious what planet it refers to. It's nice to be more verbose. At least until the variable isNotTooLong.
+Huomaa, että voisimme käyttää myös lyhyempää nimeä `planet`, mutta silloin ei olisi selvää, mihin planeettaan viitataan. On hyvä olla kuvaava. Ainakin kunnes muuttujan nimiOnLiianPitka.
 
-## The name of the current visitor
+## Nykyisen vierailijan nimi
 
 ```js
 let currentUserName = "John";
 ```
 
-Again, we could shorten that to `userName` if we know for sure that the user is current.
+Voisimme taas lyhentää tämän muotoon `userName`, jos tiedämme varmasti, että kyseessä on tämänhetkinen käyttäjä.
 
-Modern editors and autocomplete make long variable names easy to write. Don't save on them. A name with 3 words in it is fine.
+Nykyaikaiset editorit ja automaattinen tekstintäyttö tekevät pitkistä muuttujien nimistä helppoja kirjoittaa. Älä säästele niistä. Kolmesanainen nimi käy hyvin.
 
-And if your editor does not have proper autocompletion, get [a new one](/code-editors).
+Ja jos editorisi ei tuoe automaattista tekstintäyttöä, hanki [uusi](/code-editors).

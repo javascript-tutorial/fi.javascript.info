@@ -1,5 +1,5 @@
-We generally use upper case for constants that are "hard-coded". Or, in other words, when the value is known prior to execution and directly written into the code.
+Yleisesti käytämme vakiomuuttujissa isoja kirjaimia, jos ne on "kovakoodattu". Eli, toisin sanoen, kun niiden arvo tunnetaan ennen koodin suorittamista ja kirjoitetaan suoraan koodiin. 
 
-In this code, `birthday` is exactly like that. So we could use the upper case for it.
+Tässä koodissa, `birthday` on juuri tuollainen. Käyttäisimme siis sen yhteydessä isoja kirjaimia.
 
-In contrast, `age` is evaluated in run-time. Today we have one age, a year after we'll have another one. It is constant in a sense that it does not change through the code execution. But it is a bit "less of a constant" than `birthday`: it is calculated, so we should keep the lower case for it.
+Tätä vastoin `age` määritellään koodin suorittamisen aikana. Tänään meillä on yksi ikä, vuoden päästä toinen. Muuttuja on vakio siinä mielessä, että se ei muutu koodin suorituksen aikana. Se on kuitenkin vähän "vähemmän vakio" kuin `birthday`: se lasketaan, joten käytämme siinä pieniä kirjaimia.
