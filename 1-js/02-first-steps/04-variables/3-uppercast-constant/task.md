@@ -2,9 +2,9 @@ importance: 4
 
 ---
 
-# Uppercase const?
+# Isokirjaiminen const?
 
-Examine the following code:
+Tutki seuraavaa koodia:
 
 ```js
 const birthday = '18.04.1982';
@@ -12,13 +12,13 @@ const birthday = '18.04.1982';
 const age = someCode(birthday);
 ```
 
-Here we have a constant `birthday` date and the `age` is calculated from `birthday` with the help of some code (it is not provided for shortness, and because details don't matter here).
+Meillä on vakiomuuttuja `birthday` päivämäärä ja `age` lasketaan muuttujan `birthday` avulla jonkin koodin avulla (sitä ei ole tässä näkyvillä, koska yksityiskohdilla ei ole tässä kohtaa merkitystä).
 
-Would it be right to use upper case for `birthday`? For `age`? Or even for both?
+Käyttäisitkö isoja kirjaimia muuttujalle `birthday`? Entä `age`? Tai jopa molemmissa?
 
 ```js
-const BIRTHDAY = '18.04.1982'; // make uppercase?
+const BIRTHDAY = '18.04.1982'; // käytä isoja kirjaimia?
 
-const AGE = someCode(BIRTHDAY); // make uppercase?
+const AGE = someCode(BIRTHDAY); // käytä isoja kirjaimia?
 ```
 

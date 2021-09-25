@@ -2,9 +2,9 @@ importance: 2
 
 ---
 
-# Working with variables
+# Muuttujien käsittely
 
-1. Declare two variables: `admin` and `name`.
-2. Assign the value `"John"` to `name`.
-3. Copy the value from `name` to `admin`.
-4. Show the value of `admin` using `alert` (must output "John").
+1. Esittele kaksi muuttujaa: `admin` ja `name`.
+2. Anna arvo `"John"` muuttujalle `name`.
+3. Kopioi muuttujan `name` arvo muuttujaan `admin`.
+4. Näytä muuttujan `admin` arvo käyttämällä `alert` komentoa (tuloksen on oltava "John").

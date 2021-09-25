@@ -1,61 +1,61 @@
-# Variables
+# Muuttujat
 
-Most of the time, a JavaScript application needs to work with information. Here are two examples:
-1. An online shop -- the information might include goods being sold and a shopping cart.
-2. A chat application -- the information might include users, messages, and much more.
+JavaScript ohjelmien täytyy useimmiten käsitellä tietoa. Tässä on kaksi esimerkkiä:
+1. Verkkokauppa -- tiedot voisivat sisältää myytäviä tuotteita ja ostoskorin.
+2. Chat sovellus -- tiedot voisivat sisältää käyttäjiä, viestejä ja paljon muuta.
 
-Variables are used to store this information.
+Näiden tietojen varastoimiseen käytetään muuttujia.
 
-## A variable
+## Muuttuja
 
-A [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) is a "named storage" for data. We can use variables to store goodies, visitors, and other data.
+[Muuttuja](https://fi.wikipedia.org/wiki/Muuttuja_(ohjelmointi)) on nimetty tietovarasto tiedolle. Voimme käyttää muuttujia varastoimaan kaupan hyödykkeitä, vierailijoita ja muuta dataa.
 
-To create a variable in JavaScript, use the `let` keyword.
+Luodaksesi muuttujan JavaScriptissa, käytä avainsanaa `let`.
 
-The statement below creates (in other words: *declares*) a variable with the name "message":
+Alla oleva lauseke luo (toisin sanoen: *esittelee*) muuttujan, jonka nimi on "message":
 
 ```js
 let message;
 ```
 
-Now, we can put some data into it by using the assignment operator `=`:
+Voimme nyt varastoida siihen tietoja käyttämällä sijoitus operaattoria `=`:
 
 ```js
 let message;
 
 *!*
-message = 'Hello'; // store the string 'Hello' in the variable named message
+message = 'Hello'; // varastoidaan merkkijono 'Hello' muuttujaan nimeltä message
 */!*
 ```
 
-The string is now saved into the memory area associated with the variable. We can access it using the variable name:
+Merkkijono on nyt varastoitu muistin osaan, joka on liitetty muuttujaan. Pääsemme siihen käsiksi muuttujan nimen avulla:
 
 ```js run
 let message;
 message = 'Hello!';
 
 *!*
-alert(message); // shows the variable content
+alert(message); // näyttää muuttujan sisällön
 */!*
 ```
 
-To be concise, we can combine the variable declaration and assignment into a single line:
+Tiiviyden vuoksi voimme yhdistää muuttujan esittelyn ja arvon sijoituksen yhteen riviin:
 
 ```js run
-let message = 'Hello!'; // define the variable and assign the value
+let message = 'Hello!'; // esitellään muuttuja ja sijoitetaan arvo
 
 alert(message); // Hello!
 ```
 
-We can also declare multiple variables in one line:
+Voimme myös esitellä useamman muuttujan yhdellä rivillä:
 
 ```js no-beautify
 let user = 'John', age = 25, message = 'Hello';
 ```
 
-That might seem shorter, but we don't recommend it. For the sake of better readability, please use a single line per variable.
+Tuo näyttää lyhyemmältä, mutta emme suosittele sitä. Paremman luettavuuden vuoksi kannattaa käyttää yhtä riviä per muuttuja.
 
-The multiline variant is a bit longer, but easier to read:
+Monirivinen versio on vähän pidempi, mutta se on helpompi lukea:
 
 ```js
 let user = 'John';
@@ -63,14 +63,14 @@ let age = 25;
 let message = 'Hello';
 ```
 
-Some people also define multiple variables in this multiline style:
+Jotkut ihmiset esittelevät useampia muuttujia monella rivillä myös tällaisella tavalla:
 ```js no-beautify
 let user = 'John',
   age = 25,
   message = 'Hello';
 ```
 
-...Or even in the "comma-first" style:
+...Tai jopa "pilkku ensin" tyylillä:
 
 ```js no-beautify
 let user = 'John'
@@ -78,46 +78,46 @@ let user = 'John'
   , message = 'Hello';
 ```
 
-Technically, all these variants do the same thing. So, it's a matter of personal taste and aesthetics.
+Teknisesti kaikki nämä vaihtoehdot tekevät saman asian. On siis kyse lähinnä henkilökohtaisista mieltymyksistä ja estetiikasta. 
 
 ````smart header="`var` instead of `let`"
-In older scripts, you may also find another keyword: `var` instead of `let`:
+Vanhemmissa skripteissä saattaa esiintyä myös `var` avainsana `let`:n sijaan:
 
 ```js
 *!*var*/!* message = 'Hello';
 ```
 
-The `var` keyword is *almost* the same as `let`. It also declares a variable, but in a slightly different, "old-school" way.
+Tämä `var` avainsana on *lähes* sama asia kuin `let`. Myös se esittelee muuttujan, mutta vähän erilaisella, "vanhanaikaisella" tavalla.
 
-There are subtle differences between `let` and `var`, but they do not matter for us yet. We'll cover them in detail in the chapter <info:var>.
+Avainsanojen `let` ja `var` välillä on pieniä eroja, mutta ne eivät vielä vaikuta meihin. Käsittelemme niitä yksityiskohtaisesti kappaleessa <info:var>.
 ````
 
-## A real-life analogy
+## Tosielämän analogia
 
-We can easily grasp the concept of a "variable" if we imagine it as a "box" for data, with a uniquely-named sticker on it.
+On helpompi ymmärtää "muuttuja" käsite, jos kuvittelemme sen olevan "laatikko" datalle, jossa on uniikki nimitarra.
 
-For instance, the variable `message` can be imagined as a box labeled `"message"` with the value `"Hello!"` in it:
+Esimerkiksi muuttuja `message` voidaan kuvitella laatikoksi, joka on merkattu `"message"` tarralla ja jonka sisällä on arvo `"Hello!"`:
 
 ![](variable.svg)
 
-We can put any value in the box.
+Voimme laittaa laatikkoon minkä tahansa arvon.
 
-We can also change it as many times as we want:
+Voimme myös muuttaa sitä niin usein kuin haluamme:
 ```js run
 let message;
 
 message = 'Hello!';
 
-message = 'World!'; // value changed
+message = 'World!'; // arvo muuttuu
 
 alert(message);
 ```
 
-When the value is changed, the old data is removed from the variable:
+Kun arvoa muutetaan, vanha data poistetaan muuttujasta:
 
 ![](variable-change.svg)
 
-We can also declare two variables and copy data from one into the other.
+Voimme myös esitellä kaksi muuttujaa ja kopioida dataa niiden välillä.
 
 ```js run
 let hello = 'Hello world!';
@@ -125,113 +125,113 @@ let hello = 'Hello world!';
 let message;
 
 *!*
-// copy 'Hello world' from hello into message
+// kopioidaan 'Hello world' hello-muuttujasta message-muuttujaan
 message = hello;
 */!*
 
-// now two variables hold the same data
+// nyt kahdessa muuttujassa on sama arvo
 alert(hello); // Hello world!
 alert(message); // Hello world!
 ```
 
-````warn header="Declaring twice triggers an error"
-A variable should be declared only once.
+````warn header="Kahdesti esitteleminen aiheuttaa virheen"
+Muuttujan voi esitellä vain kerran.
 
-A repeated declaration of the same variable is an error:
+Saman muuttujan esitteleminen useamman kerran aiheuttaa virheen:
 
 ```js run
 let message = "This";
 
-// repeated 'let' leads to an error
+// toistuva 'let' johtaa virheeseen
 let message = "That"; // SyntaxError: 'message' has already been declared
 ```
-So, we should declare a variable once and then refer to it without `let`.
+Meidän pitää siis esitellä muuttuja kerran ja sen jälkeen viitata siihen ilman `let` avainsanaa.
 ````
 
-```smart header="Functional languages"
-It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](http://www.scala-lang.org/) or [Erlang](http://www.erlang.org/) that forbid changing variable values.
+```smart header="Funktionaaliset kielet"
+On mielenkiintoista huomata, että on olemassa [funktionaalisia](https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi) ohjelmointikieliä kuten [Scala](http://www.scala-lang.org/) tai [Erlang](http://www.erlang.org/), jotka kieltävät muuttujien arvojen muuttamisen.
 
-In such languages, once the value is stored "in the box", it's there forever. If we need to store something else, the language forces us to create a new box (declare a new variable). We can't reuse the old one.
+Tällaisissa kielissä "laatikkoon" varastoitu arvo on siellä ikuisesti. Jos meidän täytyy varastoida jotain muuta, kieli pakottaa meidät luomaan uuden laatikon (esittelemään uuden muuttujan). Vanhaa ei voida käyttää uudelleen.
 
-Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits. Studying such a language (even if you're not planning to use it soon) is recommended to broaden the mind.
+Vaikka tämä vaikuttaisi ensinäkemältä vähän oudolta, nämä kielet kykenevät hyvin vakavaan sovelluskehitykseen. Lisäksi on olemassa alueita, kuten rinnakkaislaskelmia, joilla tämä rajoitus tuo tiettyjä etuja. Tällaisen kielen opiskelu (vaikka et aio käyttää sitä pian) on suositeltavaa mielesi laajentamiseksi.
 ```
 
-## Variable naming [#variable-naming]
+## Muuttujien nimeäminen [#variable-naming]
 
-There are two limitations on variable names in JavaScript:
+JavaScriptissa on kaksi rajoitusta muuttujien nimille:
 
-1. The name must contain only letters, digits, or the symbols `$` and `_`.
-2. The first character must not be a digit.
+1. Nimen täytyy sisältää vain kirjaimia, numeroita tai merkkejä `$` ja `_`.
+2. Ensimmäinen merkki ei saa olla numero.
 
-Examples of valid names:
+Esimerkkejä pätevistä nimistä:
 
 ```js
 let userName;
 let test123;
 ```
 
-When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, each word except first starting with a capital letter: `myVeryLongName`.
+Kun nimi sisältää useampia sanoja, käytetään yleensä [camelCasea](https://fi.wikipedia.org/wiki/CamelCase). Eli: sanat kirjoitetaan peräkkäin niin, että kaikki paitsi ensimmäinen alkaa isolla kirjaimella: `minunTosiPitkaNimi`.
 
-What's interesting -- the dollar sign `'$'` and the underscore `'_'` can also be used in names. They are regular symbols, just like letters, without any special meaning.
+On mielenkiintoista, että dollarimerkkiä `'$'` ja alaviivaa `'_'` voidaan käyttää nimissä. Ne ovat tavallisia symboleita samoin kuin kirjaimet, eikä niillä ole erityistä merkitystä.
 
-These names are valid:
+Nämä nimet ovat päteviä:
 
 ```js run untrusted
-let $ = 1; // declared a variable with the name "$"
-let _ = 2; // and now a variable with the name "_"
+let $ = 1; // esittelee muuttujan nimellä "$"
+let _ = 2; // ja nyt muuttujan nimellä "_"
 
 alert($ + _); // 3
 ```
 
-Examples of incorrect variable names:
+Esimerkkejä vääristä nimistä:
 
 ```js no-beautify
-let 1a; // cannot start with a digit
+let 1a; // ei voi alkaa numerolla
 
-let my-name; // hyphens '-' aren't allowed in the name
+let my-name; // viivoja '-' ei sallita
 ```
 
-```smart header="Case matters"
-Variables named `apple` and `AppLE` are two different variables.
+```smart header="Kirjainkoolla on merkitystä"
+Muuttujat `apple` ja `AppLE` ovat kaksi eri muuttujaa.
 ```
 
-````smart header="Non-Latin letters are allowed, but not recommended"
-It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
+````smart header="Ei-latinalaiset kirjaimet ovat myös sallittuja, mutta niitä ei suositella"
+On mahdollista käyttää mitä tahansa kieltä, mukaanlukien kyrilliset aakkoset ja jopa hieroglyfit, tähän tapaan:
 
 ```js
 let имя = '...';
 let 我 = '...';
 ```
 
-Technically, there is no error here. Such names are allowed, but there is an international convention to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it some time.
+Periaattessa tässä ei ole virhettä. Tällaiset nimet ovat sallittuja, mutta kansainvälinen tapa on käyttää englantia muuttujien nimissä. Myös pienissä skripteissä, niillä voi olla pitkä elämä. Muista maista tulevien ihmisten on ehkä luettava sitä joskus.
 ````
 
-````warn header="Reserved names"
-There is a [list of reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), which cannot be used as variable names because they are used by the language itself.
+````warn header="Varatut nimet"
+On olemassa [lista varatuista sanoista](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), joita ei voida käyttää, koska niitä käytetään kielessä itsessään.
 
-For example: `let`, `class`, `return`, and `function` are reserved.
+Esimerkiksi `let`, `class`, `return`, ja `function` ovat varattuja.
 
-The code below gives a syntax error:
+Alla oleva koodi antaa syntaksivirheen:
 
 ```js run no-beautify
-let let = 5; // can't name a variable "let", error!
-let return = 5; // also can't name it "return", error!
+let let = 5; // muuttujan nimi ei voi olla "let", virhe!
+let return = 5; // se ei voi olla myöskään "return", virhe!
 ```
 ````
 
-````warn header="An assignment without `use strict`"
+````warn header="Sijoitus ilman `use strict` komentoa"
 
-Normally, we need to define a variable before using it. But in the old times, it was technically possible to create a variable by a mere assignment of the value without using `let`. This still works now if we don't put `use strict` in our scripts to maintain compatibility with old scripts.
+Tavallisesti meidän pitää esitellä muuttuja ennen sen käyttöä. Ennen vanhaan oli periaattessa mahdollista luoda muuttuja ihan vaan sijoittamalla arvo ilman, että käytti `let` avainsanaa. Tämä toimii edelleen, jos emme sijoita `use strict` komentoa skripteihimme, jotta yhteensopivuus vanhojen skriptien kanssa säilyy.
 
 ```js run no-strict
-// note: no "use strict" in this example
+// huom: ei "use strict" komentoa
 
-num = 5; // the variable "num" is created if it didn't exist
+num = 5; // muuttuja "num" luodaan, jos sitä ei ole olemassa
 
 alert(num); // 5
 ```
 
-This is a bad practice and would cause an error in strict mode:
+Tämä on huono tapa ja aiheuttaisi virheen strict tilassa:
 
 ```js
 "use strict";
@@ -242,32 +242,32 @@ num = 5; // error: num is not defined
 ```
 ````
 
-## Constants
+## Vakiomuuttujat
 
-To declare a constant (unchanging) variable, use `const` instead of `let`:
+Vakiomuuttujan (ei muutu) voi esitellä käyttämällä `const` avainsanaa `let` avainsanan sijasta:
 
 ```js
 const myBirthday = '18.04.1982';
 ```
 
-Variables declared using `const` are called "constants". They cannot be reassigned. An attempt to do so would cause an error:
+Muuttujia, jotka esitellään `const` avainsanalla kutsutaan "vakiomuuttujiksi". Niiden arvoa ei voida sijoittaa uudelleen. Yrittäminen aiheuttaisi virheen:
 
 ```js run
 const myBirthday = '18.04.1982';
 
-myBirthday = '01.01.2001'; // error, can't reassign the constant!
+myBirthday = '01.01.2001'; // Error, can't reassign the constant!
 ```
 
-When a programmer is sure that a variable will never change, they can declare it with `const` to guarantee and clearly communicate that fact to everyone.
+Kun ohjelmoija on varma, ettei muuttuja koskaan muutu, se voidaan esitellä `const` avainsanalla, jolloin varmistutaan arvon pysyvyydestä ja se saadaan kommunikoitua kaikille.
 
 
-### Uppercase constants
+### Isokirjaimiset vakiomuuttujat
 
-There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.
+Laajalle levinnyt käytäntö on käyttää vakiomuuttujia korvaamaan vaikeasti muistettavia arvoja, jotka tunnetaan ennen koodin suorittamista.
 
-Such constants are named using capital letters and underscores.
+Tällaiset vakiot kirjoitetaan suurten kirjainten ja alaviivojen avulla.
 
-For instance, let's make constants for colors in so-called "web" (hexadecimal) format:
+Luodaan esimerkiksi vakioita väreille niin sanotussa "web" (heksadesimaali) muodossa:
 
 ```js run
 const COLOR_RED = "#F00";
@@ -275,69 +275,69 @@ const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
 const COLOR_ORANGE = "#FF7F00";
 
-// ...when we need to pick a color
+// ...kun meidän tarvitsee valita väri
 let color = COLOR_ORANGE;
 alert(color); // #FF7F00
 ```
 
-Benefits:
+Hyödyt:
 
-- `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
-- It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
-- When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
+- `COLOR_ORANGE` on paljon helpompi muistaa kuin `"#FF7F00"`.
+- On paljon helpompi kirjoittaa väärin `"#FF7F00"` kuin `COLOR_ORANGE`.
+- Kun koodia lukee, `COLOR_ORANGE` on paljon kuvaavampi kuin `#FF7F00`.
 
-When should we use capitals for a constant and when should we name it normally? Let's make that clear.
+Milloin käytämme suuria kirjaimia ja milloin nimeämme vakiot normaalisti? Tehdään siitä selvää.
 
-Being a "constant" just means that a variable's value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+Termillä "vakio" tarkoitetaan vain sitä, että muuttujan arvo ei koskaan muutu. On kuitenkin vakioita, jotka tunnetaan ennen koodin suoritusta (kuten värin punainen heksadesimaaliarvo) ja vakioita, jotka *lasketaan* koodin suorituksen aikana, mutta ne eivät muutu ensimmäisen arvon sijoituksen jälkeen.
 
-For instance:
+Esimerkiksi:
 ```js
-const pageLoadTime = /* time taken by a webpage to load */;
+const pageLoadTime = /* aika, joka kuluu nettisivun lataamiseen */;
 ```
 
-The value of `pageLoadTime` is not known prior to the page load, so it's named normally. But it's still a constant because it doesn't change after assignment.
+Muuttujan `pageLoadTime` arvoa ei tunneta ennen sivun lataamista, joten se kirjoitetaan normaalisti. Se on silti vakio, koska sen arvo ei muutu sijoittamisen jälkeen.
 
-In other words, capital-named constants are only used as aliases for "hard-coded" values.  
+Toisin sanoen, suuria kirjaimia käytetään vain vakiomuuttujissa, joilla on "kovakoodattu" arvo.  
 
-## Name things right
+## Oikeaoppinen nimeäminen
 
-Talking about variables, there's one more extremely important thing.
+Muuttujista puhuttaessa on vielä yksi erittäin tärkeä asia.
 
-A variable name should have a clean, obvious meaning, describing the data that it stores.
+Nimellä pitäisi olla selkeä, itsestäänselvä tarkoitus, joka kuvaa sen varastoimaa dataa.
 
-Variable naming is one of the most important and complex skills in programming. A quick glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+Muuttujien nimeäminen on yksi tärkeimmistä ja vaikeimmista taidoista ohjelmoinnissa. Nopea muuttujien nimien vilkaisu voi paljastaa, minkä koodin on kirjoittanut aloittelija ja minkä kokenut sovelluskehittäjä.
 
-In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it's much easier to find information that is well-labeled. Or, in other words, when the variables have good names.
+Oikeassa projektissa suurin osa ajasta käytetään olemassa olevan koodin muokkaamiseen ja jatkamiseen sen sijaan, että kirjoitettaisiin jotain täysin tyhjästä. Kun palaamme koodin ääreen tehtyämme jotain muuta vähän aikaa, on paljon helpompi löytää tietoa, joka on merkitty hyvin. Toisin sanoen, kun muuttujilla on hyvät nimet.
 
-Please spend time thinking about the right name for a variable before declaring it. Doing so will repay you handsomely.
+Käytäthän aikaa hyvän muuttujan nimen keksimiseen ennen kuin esittelet sen. Tämä maksaa itsensä takaisin komeasti.
 
-Some good-to-follow rules are:
+Muutamia hyviä sääntöjä:
 
-- Use human-readable names like `userName` or `shoppingCart`.
-- Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you're doing.
-- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It's only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
-- Agree on terms within your team and in your own mind. If a site visitor is called a "user" then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+- Käytä nimiä, jotka ihminen ymmärtää kuten `userName` tai `shoppingCart`.
+- Vältä lyhenteitä ja lyhyitä nimiä kuten `a`, `b`, `c`, jollet todella tiedä mitä olet tekemässä.
+- Tee nimistä maksimaalisen kuvaavia ja tiiviitä. Esimerkkejä huonoista nimistä ovat `data` ja `value`. Tällaiset nimet eivät kerro mitään. Niiden käyttäminen on okei vain silloin, kun koodin konteksti tekee erityisen itsestäänselväksi, mistä datasta ja arvosta on kyse.
+- Sovi ehdoista tiimisi kesken ja omassa mielessäsi. Jos sivuston nykyinen käyttäjä on "user", siihen liittyville muuttujille annetaan nimeksi `currentUser` tai `newUser` sen sijaan, että käytetään nimiä `currentVisitor` tai `newManInTown`.
 
-Sounds simple? Indeed it is, but creating descriptive and concise variable names in practice is not. Go for it.
+Kuulostaa yksinkertaiselle? Se todellakin on, mutta kuvaavien ja tiiviiden muuttujien nimien keksiminen käytännössä ei ole helppoa. Anna palaa.
 
-```smart header="Reuse or create?"
-And the last note. There are some lazy programmers who, instead of declaring new variables, tend to reuse existing ones.
+```smart header="Uudelleenkäyttö vai uuden luominen?"
+Viimeinen huomio. On paljon laiskoja ohjelmoijia, joilla on tapana käyttää uudelleen olemassa olevia muuttujien nimiä uusien luomisen sijaan.
 
-As a result, their variables are like boxes into which people throw different things without changing their stickers. What's inside the box now? Who knows? We need to come closer and check.
+Tämän tuloksena, heidän muuttujansa ovat kuin laatikoita, joihin ihmiset heittelevät erilaisia asioita ilman, että niiden nimitarroja muutetaan. Mitä laatikossa on nyt? Meidän on katsottava lähemmin ja tarkistettava.
 
-Such programmers save a little bit on variable declaration but lose ten times more on debugging.
+Tällaiset ohjelmoijat säästävät hieman aikaa muuttujien esittelyssä, mutta menettävät kymmenenkertaisen määrän aikaa virheenetsinnässä ja -korjauksessa.
 
-An extra variable is good, not evil.
+Uusi muuttuja on hyvä, ei paha asia.
 
-Modern JavaScript minifiers and browsers optimize code well enough, so it won't create performance issues. Using different variables for different values can even help the engine optimize your code.
+Nykyaikaiset JavaScriptin minimoijat ja selaimet optimoivat koodia tarpeeksi hyvin, joten se ei aiheuta suorityskykyongelmia. Eri muuttujien käyttö eri arvoille voi jopa auttaa moottoria optimoimaan koodisi.
 ```
 
-## Summary
+## Tiivistelmä
 
-We can declare variables to store data by using the `var`, `let`, or `const` keywords.
+Voimme esitellä muuttujia varastoidaksemme dataa käyttämällä `var`, `let` tai `const` avainsanoja.
 
-- `let` -- is a modern variable declaration.
-- `var` -- is an old-school variable declaration. Normally we don't use it at all, but we'll cover subtle differences from `let` in the chapter <info:var>, just in case you need them.
-- `const` -- is like `let`, but the value of the variable can't be changed.
+- `let` -- on nykyaikainen muuttujan esittely.
+- `var` -- on vanhanaikainen muuttujan esittely. Tavallisesti emme käytä sitä ollenkaan, mutta käsittelemme sen pieniä eroja `let` avainsanaan kappaleessa <info:var> siltä varalta, että tarvitset sitä
+- `const` -- on kuin `let`, mutta sen arvoa ei voida muuttaa.
 
-Variables should be named in a way that allows us to easily understand what's inside them.
+Muuttujat pitää nimetä niin, että ymmärrämme helposti, mitä ne sisältävät.
