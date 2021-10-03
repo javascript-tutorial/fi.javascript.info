@@ -6,7 +6,7 @@ Katsotaan, mikä JavaScriptissä on niin erityistä, mitä voimme saada sen avul
 
 *JavaScript* luotiin alunperin "tekemään nettisivuista eläviä".
 
-Tällä kielellä kirjoitettuja ohjelmia kutsujaan *skripteiksi*. Ne voidaan kirjoittaa suoraan nettisivun HTML:ään ja ne suoritetaan automaattisesti, kun sivu latautuu.
+Tällä kielellä kirjoitettuja ohjelmia kutsutaan *skripteiksi*. Ne voidaan kirjoittaa suoraan nettisivun HTML:ään ja ne suoritetaan automaattisesti, kun sivu latautuu.
 
 Skriptit välitetään ja suoritetaan tavallisena tekstinä. Niiden suorittamiseen ei tarvita erityistä valmistelua tai kääntämistä.
 
@@ -15,10 +15,10 @@ Tässä suhteessa JavaScript poikkeaa selkeästi toisesta kielestä nimeltä [Ja
 ```smart header="Miksi sen nimi on <u>Java</u>Script?"
 Kun JavaScript luotiin, sillä oli toinen nimi: "LiveScript". Java oli kuitenkin siihen aikaan erittäin suosittu kieli, joten päätettiin, että uuden kielen sijoittamisesta Javan "nuoremmaksi veljeksi" olisi apua.
 
-Kehittyessään JavaScriptista tuli kuitenkin täysin itsenäinen, jolla on oma määrittelynsä nimeltä [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), eikä sillä enää ole yhteyttä Javaan.
+Kehittyessään JavaScriptistä tuli kuitenkin täysin itsenäinen, jolla on oma määrittelynsä nimeltä [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), eikä sillä enää ole yhteyttä Javaan.
 ```
 
-Nykyisin JavaScriptia voidaan suorittaa selaimen lisäksi palvelimella tai oikeastaan millä tahansa laitteella, jossa on erityinen ohjelma nimeltä [JavaScript-moottori](https://en.wikipedia.org/wiki/JavaScript_engine).
+Nykyisin JavaScriptiä voidaan suorittaa selaimen lisäksi palvelimella tai oikeastaan millä tahansa laitteella, jossa on erityinen ohjelma nimeltä [JavaScript-moottori](https://en.wikipedia.org/wiki/JavaScript_engine).
 
 Selaimeen on upotettu moottori, jota kutsutaan joskus "JavaScript-virtuaalikoneeksi".
 
@@ -43,7 +43,7 @@ Moottori käyttää optimointeja prosessin jokaisessa vaiheessa. Se jopa katsoo 
 
 ## Mitä JavaScript voi tehdä selaimessa?
 
-Nykyaikainen JavaScript on "turvallinen" ohjelmointikieli. Se ei salli matalan tason muistiin tai suorittimeen, koska se alunperin suunniteltiin selaimiin, jotka eivät vaadi sitä.
+Nykyaikainen JavaScript on "turvallinen" ohjelmointikieli. Se ei salli matalan tason pääsyä muistiin tai suorittimeen, koska se alunperin suunniteltiin selaimiin, jotka eivät vaadi sitä.
 
 JavaScriptin kyvyt riippuvat suuresti ympäristöstä, jossa sitä ajetaan. Esimerkiksi [Node.js](https://wikipedia.org/wiki/Node.js) tukee funktioita, joiden avulla JavaScript voi lukea/kirjoittaa mielivaltaisia tiedostoja, suorittaa verkkopyyntöjä, jne.
 
@@ -67,17 +67,17 @@ Esimerkkejä tällaisista rajoituksista ovat:
 
     Modernit selaimet voivat sallia sen olla tekemisissä tiedostojen kanssa, mutta pääsy on rajoitettu ja sallittu vain, jos käyttäjä toimii tietyllä tavalla, kuten "pudottaa" tiedoston selaimeen tai valitsee sen `<input>` tunnisteen kautta.
 
-    Kameran / mikrofonin ja muiden laitteiden kanssa voi olla vuorovaikutuksessa, mutta ne edellyttävät käyttäjän nimenomaista lupaa. Eli sivusto, jossa JavaScript on käytössä, ei voi salaa käyttää webkameraa, tarkkailla ympäristöä ja lähettää tietoja [SUPO](https://fi.wikipedia.org/wiki/Suojelupoliisi):lle.
-- Välilehdet/ikkunat eivät lähtökohtaisesti tiedä toisistaan. Joskus ne tietävät, esimerkiksi yhden ikkunan käyttäessä JavaScriptiä toisen ikkunan avaamiseen, mutta tässäkään tapauksessa yhden sivun JavaScript ei pääse käsiksi toiseen sivuun, jos ne ovat peräisin eri sivustoilta (eri verkkotunnus, protokolla tai portti).
+    Kameran tai mikrofonin ja muiden laitteiden kanssa voi olla vuorovaikutuksessa, mutta ne edellyttävät käyttäjän nimenomaista lupaa. Eli sivusto, jossa JavaScript on käytössä, ei voi salaa käyttää webkameraa, tarkkailla ympäristöä ja lähettää tietoja [SUPO](https://fi.wikipedia.org/wiki/Suojelupoliisi):lle.
+- Välilehdet tai ikkunat eivät lähtökohtaisesti tiedä toisistaan. Joskus ne tietävät, esimerkiksi yhden ikkunan käyttäessä JavaScriptiä toisen ikkunan avaamiseen, mutta tässäkään tapauksessa yhden sivun JavaScript ei pääse käsiksi toiseen sivuun, jos ne ovat peräisin eri sivustoilta (eri verkkotunnus, protokolla tai portti).
 
     Tätä kutsutaan nimellä "Same Origin Policy" ("saman alkuperän käytäntö"). Tämän kiertämiseksi *molempien sivujen* on sovittava tietojenvaihdosta ja niiden pitää sisältää erityistä JavaScript-koodia, joka käsittelee sitä. Käsittelemme tätä tässä tutoriaalissa.
 
     Tämäkin rajoitus on tehty käyttäjän turvaksi. Käyttäjän avaama sivu osoitteessa `http://jokusivu.fi` ei saa päästä käsiksi tai varastaa tietoa toiselle välilehdelle avatulta sivulta, jonka osoite on `http://gmail.com`.
-- JavaScript voi helposti kommunikoida verkon yli sen palvelimen kanssa, jolta nykyinen sivu on peräisin, mutta sen kyky vastaanottaa tietoja toisilta sivustoilta/verkkotunnuksilta on hankalaa. Vaikka se onkin mahdollista, se vaatii nimenomaista suostumusta (HTTP otsikkojen muodossa) toiselta osapuolelta. Tämä on jälleen yksi turvarajoitus.
+- JavaScript voi helposti kommunikoida verkon yli sen palvelimen kanssa, jolta nykyinen sivu on peräisin, mutta sen kyky vastaanottaa tietoja toisilta sivustoilta tai verkkotunnuksilta on hankalaa. Vaikka se onkin mahdollista, se vaatii nimenomaista suostumusta (HTTP-otsikkojen muodossa) toiselta osapuolelta. Tämä on jälleen yksi turvarajoitus.
 
 ![](limitations.svg)
 
-Samat rajoitukset eivät koske JavaScriptiä selaimen ulkopuolella, esimerkiksi palvelimella. Nykyaikaisiin selaimiin on myös saatavilla lisäosia/laajennuksia, joilla on laajemmat käyttöoikeudet.
+Samat rajoitukset eivät koske JavaScriptiä selaimen ulkopuolella, esimerkiksi palvelimella. Nykyaikaisiin selaimiin on myös saatavilla lisäosia tai laajennuksia, joilla on laajemmat käyttöoikeudet.
 
 ## Mikä tekee JavaScriptistä uniikin?
 
@@ -86,13 +86,13 @@ JavaScriptissä on ainakin *kolme* hienoa puolta:
 ```compare
 + Sillä on täysi integraatio HTML:n ja CSS:n kanssa.
 + Siinä tehdään yksinkertaiset asiat yksinkertaisella tavalla.
-+ Sillä on kaikkien tärkeiden selainten tuki ja se on oletuksena käytössä.
++ Sillä on kaikkien tärkeiden selainten tuki, ja se on oletuksena käytössä.
 ```
 JavaScript on ainoa selainten teknologia, johon kaikki kolme kohtaa pätevät.
 
-Tämä tekee JavaScriptista uniikin. unique. Tämän takia se on laajimmalle levinnyt selainten käyttöliittymien luontityökalu.
+Tämä tekee JavaScriptistä uniikin. Tämän takia se on laajimmalle levinnyt selainten käyttöliittymien luontityökalu.
 
-Tämän ohella JavaScriptilla voidaan tehdä myös palvelimia, mobiilisovelluksia, jne.
+Tämän ohella JavaScriptillä voidaan tehdä myös palvelimia, mobiilisovelluksia, jne.
 
 ## JavaScriptin päälle luotuja kieliä
 
@@ -102,18 +102,18 @@ Tämä on oletettavaa, koska kaikki projektit ja niiden vaatimukset ovat erilais
 
 Näin ollen viime aikoina on ilmestynyt monia kieliä, jotka muunnetaan JavaScriptiksi ennen niiden suorittamista selaimessa.
 
-Nykyaikaisten työkalujen avulla muuntaminen on todella nopeaa ja läpinäkyvää ja niiden avulla sovelluskehittäjät voivat kirjoittaa koodia toisella kielellä, joka muunnetaan automaattisesti "kulissien takana" automaattisesti.
+Nykyaikaisten työkalujen avulla muuntaminen on todella nopeaa ja läpinäkyvää ja niiden avulla sovelluskehittäjät voivat kirjoittaa koodia toisella kielellä, joka muunnetaan "kulissien takana" automaattisesti.
 
 Esimerkkejä tällaisista kielistä:
 
-- [CoffeeScript](http://coffeescript.org/) on niin sanottua syntaksisokeria JavaScriptille. Se mahdollistaa lyhyemmän syntaksin, jonka avulla voidaan kirjoittaa selkeämpää ja tarkempaa koodia. Ruby devaajat yleensä pitävät siitä.
+- [CoffeeScript](http://coffeescript.org/) on niin sanottua syntaksisokeria JavaScriptille. Se mahdollistaa lyhyemmän syntaksin, jonka avulla voidaan kirjoittaa selkeämpää ja tarkempaa koodia. Ruby-devaajat yleensä pitävät siitä.
 - [TypeScript](http://www.typescriptlang.org/) keskittyy "vahvaan tyypitykseen" yksinkertaistaakseen sovelluskehitystä ja tukeakseen monimutkaisia systeemejä. Sen on kehittänyt Microsoft.
 - [Flow](http://flow.org/) tuo mukanaan vahvan tyypityksen, mutta eri tavalla. Sen on kehittänyt Facebook.
 - [Dart](https://www.dartlang.org/) on oma kielensä, jolla on oma moottori, joka suorittaa koodia selaimen ulkopuolella (esimerkiksi mobiilisovelluksissa), mutta sekin on muunnettavissa JavaScriptiksi. Sen on kehittänyt Google.
 - [Brython](https://brython.info/) muuntaa Pythonia JavaScriptiksi ja sallii sovellusten kirjoittamisen puhtaasti Pythonilla ilman JavaScriptiä.
 - [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) on moderni, tiivis ja turvallinen ohjelmointikieli, joka toimii selaimessa tai Nodessa.
 
-Lisääkin esimerkkejä löytyy. Silti, vaikka käytämme jotain muunnettavaa kieltä, meidän tunnettava JavaScriptiä ymmärtääksemme, mitä todella olemme tekemässä.
+Lisääkin esimerkkejä löytyy. Silti, vaikka käytämme jotain muunnettavaa kieltä, meidän on tunnettava JavaScriptiä ymmärtääksemme, mitä todella olemme tekemässä.
 
 ## Yhteenveto
 
