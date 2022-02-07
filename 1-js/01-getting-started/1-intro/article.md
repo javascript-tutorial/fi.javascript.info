@@ -24,11 +24,19 @@ Selaimeen on upotettu moottori, jota kutsutaan joskus "JavaScript-virtuaalikonee
 
 Eri moottoreilla on omia kutsumanimiä. Esimerkiksi:
 
+<<<<<<< HEAD
 - [V8](https://fi.wikipedia.org/wiki/V8_(JavaScript-moottori)) -- Chromessa ja Operassa.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefoxissa.
 - ...Lisäksi on muitakin kutsumanimiä kuten "Chakra" IE:lle, "JavaScriptCore", "Nitro" ja "SquirrelFish" Safarille, jne.
 
 Yllä luetellut termit on hyvä muistaa, koska niitä käytetään internetin sovelluskehitykseen liittyvissä artikkeleissa. Me tulemme myös käyttämään niitä. Jos esimerkiksi "V8 tukee toimintoa X", se todennäköisesti toimii Chromessa ja Operassa.
+=======
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
+- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+
+The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+>>>>>>> 71da17e5960f1c76aad0d04d21f10bc65318d3f6
 
 ```smart header="Miten moottorit toimivat?"
 
@@ -59,7 +67,11 @@ Selaimessa JavaScript voi esimerkiksi:
 
 ## Mitä JavaScript EI VOI tehdä selaimessa?
 
+<<<<<<< HEAD
 JavaScriptin kyvyt selaimessa on rajoitettu käyttäjän turvallisuuden vuoksi. Tavoitteena on estää pahaa nettisivua pääsemästä käsiksi yksityisiin tietoihin tai vahingoittamasta käyttäjän tietoja.
+=======
+JavaScript's abilities in the browser are limited for the sake of a user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+>>>>>>> 71da17e5960f1c76aad0d04d21f10bc65318d3f6
 
 Esimerkkejä tällaisista rajoituksista ovat:
 
@@ -84,9 +96,15 @@ Samat rajoitukset eivät koske JavaScriptiä selaimen ulkopuolella, esimerkiksi 
 JavaScriptissä on ainakin *kolme* hienoa puolta:
 
 ```compare
+<<<<<<< HEAD
 + Sillä on täysi integraatio HTML:n ja CSS:n kanssa.
 + Siinä tehdään yksinkertaiset asiat yksinkertaisella tavalla.
 + Sillä on kaikkien tärkeiden selainten tuki ja se on oletuksena käytössä.
+=======
++ Full integration with HTML/CSS.
++ Simple things are done simply.
++ Supported by all major browsers and enabled by default.
+>>>>>>> 71da17e5960f1c76aad0d04d21f10bc65318d3f6
 ```
 JavaScript on ainoa selainten teknologia, johon kaikki kolme kohtaa pätevät.
 
@@ -117,6 +135,12 @@ Lisääkin esimerkkejä löytyy. Silti, vaikka käytämme jotain muunnettavaa ki
 
 ## Yhteenveto
 
+<<<<<<< HEAD
 - JavaScript suunniteltiin alunperin vain selaimeen, mutta sitä käytetään nykyisin myös monissa muissa ympäristöissä.
 - JavaScriptillä on nykyisin uniikki asema laajimmin käytettynä selainkielenä, joka integroituu täysin HTML:ään ja CSS:ään.
 - Monet JavaScriptiksi "muunnettavat" kielet tuovat mukanaan tiettyjä toimintoja. On suositeltavaa tutustua niihin, ainakin lyhyesti, kun JavaScript on hallussa.
+=======
+- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
+- Today, JavaScript has a unique position as the most widely-adopted browser language, fully integrated with HTML/CSS.
+- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+>>>>>>> 71da17e5960f1c76aad0d04d21f10bc65318d3f6
