@@ -31,11 +31,18 @@ Käytännössä kevyihin editoreihin voi olla saatavilla monia lisäosia mukaan 
 
 Seuraavat vaihtoehdot ansaitsevat huomiosi:
 
+<<<<<<< HEAD
 - [Atom](https://atom.io/) (järjestelmäriippumaton, ilmainen).
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [Sublime Text](http://www.sublimetext.com) (järjestelmäriippumaton, shareware).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, ilmainen).
 - [Vim](http://www.vim.org/) ja [Emacs](https://www.gnu.org/software/emacs/) ovat myös siistejä, jos tiedät, miten niitä käytetään.
+=======
+- [Atom](https://atom.io/) (cross-platform, free).
+- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> e2f9e5840737e00846bfd492192d8a3828820c60
 
 ## Ei riidellä
 
