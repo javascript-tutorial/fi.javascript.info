@@ -1,3 +1,3 @@
 # Johdanto
 
-Tietoa JavaScript -kielestä ja sen kehitysympäristöstä.
+Tietoa JavaScript-kielestä ja sen kehitysympäristöstä.
