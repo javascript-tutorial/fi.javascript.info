@@ -5,7 +5,7 @@ Tämä kirja on *tutoriaali*. Sen tavoitteena on auttaa sinua oppimaan kielen as
 
 ## Määrittely
 
-[ECMA-262 määrittely](https://www.ecma-international.org/publications/standards/Ecma-262.htm) sisältää kaikkein tarkinta, yksityiskohtaista ja virallisinta tietoa JavaScriptistä. Se määrittelee kielen.
+[ECMA-262 määrittely](https://www.ecma-international.org/publications/standards/Ecma-262.htm) sisältää kaikkein tarkinta, yksityiskohtaisinta ja virallisinta tietoa JavaScriptistä. Se määrittelee kielen.
 
 Koska tieto on niin virallista, se on aluksi vaikeaa ymmärtää. Jos siis tarvitset kaikkein luotettavinta tietoa kielen yksityiskohdista, määrittely on sille oikea paikka. Se ei kuitenkaan ole jokapäiväiseen käyttöön.
 

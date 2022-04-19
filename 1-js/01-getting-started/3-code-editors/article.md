@@ -15,7 +15,7 @@ Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
 
-Windowsille on saatavilla myös "Visual Studio", jota ei ole sama kuin "Visual Studio Code." "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
+Windowsille on saatavilla myös "Visual Studio", joka ei ole sama kuin "Visual Studio Code". "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET-alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
 Monet IDE:t ovat maksullisia, mutta niihin on saatavilla ilmaisia kokeilujaksoja. Lisäksi niiden hinta on yleensä mitätön pätevän sovelluskehittäjän palkkaan verrattuna, joten valitse vain sinulle parhaiten sopiva vaihtoehto.
 
@@ -43,4 +43,4 @@ Ylle listatut editorit ovat sellaisia, joita minä tai hyvinä ohjelmoijina pit�
 
 Suuressa maailmassamme on muitakin hyviä editoreja. Valitse se, josta pidät eniten.
 
-Editorin valinta, aivan kuten muidenkin työkalujen, on yksilöllinen päätös ja riippuu omista projekteistasi, tavoistasi ja henkilökohtaisista mieltymyksistäsi.
+Editorin, aivan kuten muidenkin työkalujen, valinta on yksilöllinen päätös ja riippuu omista projekteistasi, tavoistasi ja henkilökohtaisista mieltymyksistäsi.
