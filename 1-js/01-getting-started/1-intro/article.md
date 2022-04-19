@@ -24,11 +24,11 @@ Selaimeen on upotettu moottori, jota kutsutaan joskus "JavaScript-virtuaalikonee
 
 Eri moottoreilla on omia kutsumanimiä. Esimerkiksi:
 
-- [V8](https://fi.wikipedia.org/wiki/V8_(JavaScript-moottori)) -- Chromessa ja Operassa.
+- [V8](https://fi.wikipedia.org/wiki/V8_(JavaScript-moottori)) -- Chromessa, Operassa ja Edgessä.
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefoxissa.
 - ...Lisäksi on muitakin kutsumanimiä kuten "Chakra" IE:lle, "JavaScriptCore", "Nitro" ja "SquirrelFish" Safarille, jne.
 
-Yllä luetellut termit on hyvä muistaa, koska niitä käytetään internetin sovelluskehitykseen liittyvissä artikkeleissa. Me tulemme myös käyttämään niitä. Jos esimerkiksi "V8 tukee toimintoa X", se todennäköisesti toimii Chromessa ja Operassa.
+Yllä luetellut termit on hyvä muistaa, koska niitä käytetään internetin sovelluskehitykseen liittyvissä artikkeleissa. Me tulemme myös käyttämään niitä. Jos esimerkiksi "V8 tukee toimintoa X", se todennäköisesti toimii Chromessa, Operassa ja Edgessä.
 
 ```smart header="Miten moottorit toimivat?"
 
@@ -59,7 +59,7 @@ Selaimessa JavaScript voi esimerkiksi:
 
 ## Mitä JavaScript EI VOI tehdä selaimessa?
 
-JavaScriptin kyvyt selaimessa on rajoitettu käyttäjän turvallisuuden vuoksi. Tavoitteena on estää pahaa nettisivua pääsemästä käsiksi yksityisiin tietoihin tai vahingoittamasta käyttäjän tietoja.
+JavaScriptin kykyjä selaimessa on rajoitettu käyttäjän turvallisuuden vuoksi. Tavoitteena on estää pahaa nettisivua pääsemästä käsiksi yksityisiin tietoihin tai vahingoittamasta käyttäjän tietoja.
 
 Esimerkkejä tällaisista rajoituksista ovat:
 
@@ -117,6 +117,6 @@ Lisääkin esimerkkejä löytyy. Silti, vaikka käytämme jotain muunnettavaa ki
 
 ## Yhteenveto
 
-- JavaScript suunniteltiin alunperin vain selaimeen, mutta sitä käytetään nykyisin myös monissa muissa ympäristöissä.
+- JavaScript suunniteltiin alunperin vain selaimessa käytettäväksi kieleksi, mutta sitä käytetään nykyisin myös monissa muissa ympäristöissä.
 - JavaScriptillä on nykyisin uniikki asema laajimmin käytettynä selainkielenä, joka integroituu täysin HTML:ään ja CSS:ään.
 - Monet JavaScriptiksi "muunnettavat" kielet tuovat mukanaan tiettyjä toimintoja. On suositeltavaa tutustua niihin, ainakin lyhyesti, kun JavaScript on hallussa.

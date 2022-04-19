@@ -73,7 +73,11 @@ Skriptitiedostot liitetään HTML:ään `src` (suom. lähde) attribuutilla:
 <script src="/polku/tiedostoon/script.js"></script>
 ```
 
+<<<<<<< HEAD
 Yllä, `/polku/tiedostoon/script.js` tarkoittaa absoluuttista tiedostopolkua skriptiin sivuston juuresta (root). Polun voi kirjoittaa myös nykyisen sivun suhteen. Esimerkiksi `src="script.js"` tarkoittaisi tiedostoa nimeltä `"script.js"` nykyisessä kansiossa.
+=======
+Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"`, just like `src="./script.js"`, would mean a file `"script.js"` in the current folder.
+>>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 Voimme kirjoittaa myös koko URL-osoitteen. Esimerkiksi:
 
