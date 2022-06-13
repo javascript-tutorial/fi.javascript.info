@@ -191,8 +191,13 @@ let 1a; // ei voi alkaa numerolla
 let my-name; // viivoja '-' ei sallita
 ```
 
+<<<<<<< HEAD
 ```smart header="Kirjainkoolla on merkitystä"
 Muuttujat `apple` ja `AppLE` ovat kaksi eri muuttujaa.
+=======
+```smart header="Case matters"
+Variables named `apple` and `APPLE` are two different variables.
+>>>>>>> 7bb6066eb6ea3a030b875cdc75433c458f80997e
 ```
 
 ````smart header="Ei-latinalaiset kirjaimet ovat myös sallittuja, mutta niitä ei suositella"
@@ -297,7 +302,11 @@ const pageLoadTime = /* aika, joka kuluu nettisivun lataamiseen */;
 
 Muuttujan `pageLoadTime` arvoa ei tunneta ennen sivun lataamista, joten se kirjoitetaan normaalisti. Se on silti vakio, koska sen arvo ei muutu sijoittamisen jälkeen.
 
+<<<<<<< HEAD
 Toisin sanoen, suuria kirjaimia käytetään vain vakiomuuttujissa, joilla on "kovakoodattu" arvo.  
+=======
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 7bb6066eb6ea3a030b875cdc75433c458f80997e
 
 ## Oikeaoppinen nimeäminen
 
