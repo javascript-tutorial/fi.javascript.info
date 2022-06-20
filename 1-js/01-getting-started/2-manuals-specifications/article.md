@@ -29,8 +29,13 @@ JavaScript on kehittyvä kieli ja uusia toimintoja lisätään säännöllisesti
 
 Nähdäksesi niiden yhteensopivuuden eri selainpohjaisissa ja muissa moottoreissa, katso:
 
+<<<<<<< HEAD
 - <http://caniuse.com> - toimintokohtaiset yhteensopivuustaulukot, esim. nähdäksesi, mitkä moottorit ovat yhteensopivia nykyaikaisten salausfunktioiden kanssa: <http://caniuse.com/#feat=cryptography>.
 - <https://kangax.github.io/compat-table> - kielen toimintoja ja niiden kanssa yhteensopivia moottoreita sisältävä taulukko
+=======
+- <https://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
+- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 
 Kaikki nämä tietolähteet ovat hyödyllisiä todellisen elämän sovelluskehityksessä, koska ne sisältävät arvokasta tietoa kielen yksityiskohdista, niiden yhteensopivuudesta, jne.
 
