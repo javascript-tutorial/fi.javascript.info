@@ -63,7 +63,12 @@ let age = 25;
 let message = 'Hello';
 ```
 
+<<<<<<< HEAD
 Jotkut ihmiset esittelevät useampia muuttujia monella rivillä myös tällaisella tavalla:
+=======
+Some people also define multiple variables in this multiline style:
+
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```js no-beautify
 let user = 'John',
   age = 25,
@@ -102,7 +107,12 @@ Esimerkiksi muuttuja `message` voidaan kuvitella laatikoksi, joka on merkattu `"
 
 Voimme laittaa laatikkoon minkä tahansa arvon.
 
+<<<<<<< HEAD
 Voimme myös muuttaa sitä niin usein kuin haluamme:
+=======
+We can also change it as many times as we want:
+
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```js run
 let message;
 
@@ -191,8 +201,13 @@ let 1a; // ei voi alkaa numerolla
 let my-name; // viivoja '-' ei sallita
 ```
 
+<<<<<<< HEAD
 ```smart header="Kirjainkoolla on merkitystä"
 Muuttujat `apple` ja `AppLE` ovat kaksi eri muuttujaa.
+=======
+```smart header="Case matters"
+Variables named `apple` and `APPLE` are two different variables.
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```
 
 ````smart header="Ei-latinalaiset kirjaimet ovat myös sallittuja, mutta niitä ei suositella"
@@ -260,8 +275,12 @@ myBirthday = '01.01.2001'; // Error, can't reassign the constant!
 
 Kun ohjelmoija on varma, ettei muuttuja koskaan muutu, se voidaan esitellä `const` avainsanalla, jolloin varmistutaan arvon pysyvyydestä ja se saadaan kommunikoitua kaikille.
 
+<<<<<<< HEAD
 
 ### Isokirjaimiset vakiomuuttujat
+=======
+### Uppercase constants
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 Laajalle levinnyt käytäntö on käyttää vakiomuuttujia korvaamaan vaikeasti muistettavia arvoja, jotka tunnetaan ennen koodin suorittamista.
 
@@ -290,14 +309,23 @@ Milloin käytämme suuria kirjaimia ja milloin nimeämme vakiot normaalisti? Teh
 
 Termillä "vakio" tarkoitetaan vain sitä, että muuttujan arvo ei koskaan muutu. On kuitenkin vakioita, jotka tunnetaan ennen koodin suoritusta (kuten värin punainen heksadesimaaliarvo) ja vakioita, jotka *lasketaan* koodin suorituksen aikana, mutta ne eivät muutu ensimmäisen arvon sijoituksen jälkeen.
 
+<<<<<<< HEAD
 Esimerkiksi:
+=======
+For instance:
+
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 ```js
 const pageLoadTime = /* aika, joka kuluu nettisivun lataamiseen */;
 ```
 
 Muuttujan `pageLoadTime` arvoa ei tunneta ennen sivun lataamista, joten se kirjoitetaan normaalisti. Se on silti vakio, koska sen arvo ei muutu sijoittamisen jälkeen.
 
+<<<<<<< HEAD
 Toisin sanoen, suuria kirjaimia käytetään vain vakiomuuttujissa, joilla on "kovakoodattu" arvo.  
+=======
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 ## Oikeaoppinen nimeäminen
 
