@@ -12,8 +12,13 @@ IDE lataa projektin (joka voi sisältää monia tiedostoja), mahdollistaa navigo
 
 Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 
+<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> fe1c4a241f12a0939d1e0977cec6504ccd67201f
 
 Windowsille on saatavilla myös "Visual Studio", joka ei ole sama kuin "Visual Studio Code". "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET-alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
