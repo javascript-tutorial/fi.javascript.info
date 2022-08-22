@@ -12,8 +12,13 @@ IDE lataa projektin (joka voi sisältää monia tiedostoja), mahdollistaa navigo
 
 Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 
+<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 Windowsille on saatavilla myös "Visual Studio", joka ei ole sama kuin "Visual Studio Code". "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET-alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
@@ -32,6 +37,7 @@ Käytännössä kevyihin editoreihin voi olla saatavilla monia lisäosia mukaan 
 Seuraavat vaihtoehdot ansaitsevat huomiosi:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Atom](https://atom.io/) (järjestelmäriippumaton, ilmainen).
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [Sublime Text](http://www.sublimetext.com) (järjestelmäriippumaton, shareware).
@@ -39,6 +45,8 @@ Seuraavat vaihtoehdot ansaitsevat huomiosi:
 - [Vim](http://www.vim.org/) ja [Emacs](https://www.gnu.org/software/emacs/) ovat myös siistejä, jos tiedät, miten niitä käytetään.
 =======
 - [Atom](https://atom.io/) (cross-platform, free).
+=======
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 - [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
 - [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
