@@ -63,7 +63,12 @@ let age = 25;
 let message = 'Hello';
 ```
 
+<<<<<<< HEAD
 Jotkut ihmiset esittelevät useampia muuttujia monella rivillä myös tällaisella tavalla:
+=======
+Some people also define multiple variables in this multiline style:
+
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 ```js no-beautify
 let user = 'John',
   age = 25,
@@ -102,7 +107,12 @@ Esimerkiksi muuttuja `message` voidaan kuvitella laatikoksi, joka on merkattu `"
 
 Voimme laittaa laatikkoon minkä tahansa arvon.
 
+<<<<<<< HEAD
 Voimme myös muuttaa sitä niin usein kuin haluamme:
+=======
+We can also change it as many times as we want:
+
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 ```js run
 let message;
 
@@ -148,8 +158,13 @@ let message = "That"; // SyntaxError: 'message' has already been declared
 Meidän pitää siis esitellä muuttuja kerran ja sen jälkeen viitata siihen ilman `let` avainsanaa.
 ````
 
+<<<<<<< HEAD
 ```smart header="Funktionaaliset kielet"
 On mielenkiintoista huomata, että on olemassa [funktionaalisia](https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi) ohjelmointikieliä kuten [Scala](http://www.scala-lang.org/) tai [Erlang](http://www.erlang.org/), jotka kieltävät muuttujien arvojen muuttamisen.
+=======
+```smart header="Functional languages"
+It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](https://www.scala-lang.org/) or [Erlang](https://www.erlang.org/) that forbid changing variable values.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Tällaisissa kielissä "laatikkoon" varastoitu arvo on siellä ikuisesti. Jos meidän täytyy varastoida jotain muuta, kieli pakottaa meidät luomaan uuden laatikon (esittelemään uuden muuttujan). Vanhaa ei voida käyttää uudelleen.
 
@@ -191,12 +206,21 @@ let 1a; // ei voi alkaa numerolla
 let my-name; // viivoja '-' ei sallita
 ```
 
+<<<<<<< HEAD
 ```smart header="Kirjainkoolla on merkitystä"
 Muuttujat `apple` ja `AppLE` ovat kaksi eri muuttujaa.
 ```
 
 ````smart header="Ei-latinalaiset kirjaimet ovat myös sallittuja, mutta niitä ei suositella"
 On mahdollista käyttää mitä tahansa kieltä, mukaanlukien kyrilliset aakkoset ja jopa hieroglyfit, tähän tapaan:
+=======
+```smart header="Case matters"
+Variables named `apple` and `APPLE` are two different variables.
+```
+
+````smart header="Non-Latin letters are allowed, but not recommended"
+It is possible to use any language, including cyrillic letters, Chinese logograms and so on, like this:
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 ```js
 let имя = '...';
@@ -260,8 +284,12 @@ myBirthday = '01.01.2001'; // Error, can't reassign the constant!
 
 Kun ohjelmoija on varma, ettei muuttuja koskaan muutu, se voidaan esitellä `const` avainsanalla, jolloin varmistutaan arvon pysyvyydestä ja se saadaan kommunikoitua kaikille.
 
+<<<<<<< HEAD
 
 ### Isokirjaimiset vakiomuuttujat
+=======
+### Uppercase constants
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Laajalle levinnyt käytäntö on käyttää vakiomuuttujia korvaamaan vaikeasti muistettavia arvoja, jotka tunnetaan ennen koodin suorittamista.
 
@@ -290,14 +318,23 @@ Milloin käytämme suuria kirjaimia ja milloin nimeämme vakiot normaalisti? Teh
 
 Termillä "vakio" tarkoitetaan vain sitä, että muuttujan arvo ei koskaan muutu. On kuitenkin vakioita, jotka tunnetaan ennen koodin suoritusta (kuten värin punainen heksadesimaaliarvo) ja vakioita, jotka *lasketaan* koodin suorituksen aikana, mutta ne eivät muutu ensimmäisen arvon sijoituksen jälkeen.
 
+<<<<<<< HEAD
 Esimerkiksi:
+=======
+For instance:
+
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 ```js
 const pageLoadTime = /* aika, joka kuluu nettisivun lataamiseen */;
 ```
 
 Muuttujan `pageLoadTime` arvoa ei tunneta ennen sivun lataamista, joten se kirjoitetaan normaalisti. Se on silti vakio, koska sen arvo ei muutu sijoittamisen jälkeen.
 
+<<<<<<< HEAD
 Toisin sanoen, suuria kirjaimia käytetään vain vakiomuuttujissa, joilla on "kovakoodattu" arvo.  
+=======
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 ## Oikeaoppinen nimeäminen
 
