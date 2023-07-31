@@ -12,8 +12,13 @@ IDE lataa projektin (joka voi sisältää monia tiedostoja), mahdollistaa navigo
 
 Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 
+<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> d694e895efe89922a109702085b6ca1efeffea10
 
 Windowsille on saatavilla myös "Visual Studio", joka ei ole sama kuin "Visual Studio Code". "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET-alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
@@ -29,6 +34,7 @@ Olennaisin ero "kevyen editorin" ja "IDE:n" välillä on, että IDE toimii proje
 
 Käytännössä kevyihin editoreihin voi olla saatavilla monia lisäosia mukaan lukien sellaisia, jotka tekevät kansiotason syntaksin analysointia tai tarjoavat kirjoitetun tekstin automaattista täydennystä, joten editorityyppien välillä ei ole selkeää rajausta.
 
+<<<<<<< HEAD
 Seuraavat vaihtoehdot ansaitsevat huomiosi:
 
 <<<<<<< HEAD
@@ -43,6 +49,13 @@ Seuraavat vaihtoehdot ansaitsevat huomiosi:
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
 - [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
 >>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
+=======
+There are many options, for instance:
+
+- [Sublime Text](https://www.sublimetext.com/) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](https://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> d694e895efe89922a109702085b6ca1efeffea10
 
 ## Ei riidellä
 
@@ -50,4 +63,13 @@ Ylle listatut editorit ovat sellaisia, joita minä tai hyvinä ohjelmoijina pit�
 
 Suuressa maailmassamme on muitakin hyviä editoreja. Valitse se, josta pidät eniten.
 
+<<<<<<< HEAD
 Editorin, aivan kuten muidenkin työkalujen, valinta on yksilöllinen päätös ja riippuu omista projekteistasi, tavoistasi ja henkilökohtaisista mieltymyksistäsi.
+=======
+The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+
+The author's personal opinion:
+
+- I'd use [Visual Studio Code](https://code.visualstudio.com/) if I develop mostly frontend.
+- Otherwise, if it's mostly another language/platform and partially frontend, then consider other editors, such as XCode (Mac), Visual Studio (Windows) or Jetbrains family (Webstorm, PHPStorm, RubyMine etc, depending on the language).
+>>>>>>> d694e895efe89922a109702085b6ca1efeffea10
