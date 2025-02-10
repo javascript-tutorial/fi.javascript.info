@@ -63,7 +63,12 @@ let age = 25;
 let message = 'Hello';
 ```
 
+<<<<<<< HEAD
 Jotkut ihmiset esittelevät useampia muuttujia monella rivillä myös tällaisella tavalla:
+=======
+Some people also define multiple variables in this multiline style:
+
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ```js no-beautify
 let user = 'John',
   age = 25,
@@ -87,22 +92,37 @@ Vanhemmissa skripteissä saattaa esiintyä myös `var` avainsana `let`:n sijaan:
 *!*var*/!* message = 'Hello';
 ```
 
+<<<<<<< HEAD
 Tämä `var` avainsana on *lähes* sama asia kuin `let`. Myös se esittelee muuttujan, mutta vähän erilaisella, "vanhanaikaisella" tavalla.
 
 Avainsanojen `let` ja `var` välillä on pieniä eroja, mutta ne eivät vielä vaikuta meihin. Käsittelemme niitä yksityiskohtaisesti kappaleessa <info:var>.
+=======
+The `var` keyword is *almost* the same as `let`. It also declares a variable but in a slightly different, "old-school" way.
+
+There are subtle differences between `let` and `var`, but they do not matter to us yet. We'll cover them in detail in the chapter <info:var>.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ````
 
 ## Tosielämän analogia
 
 On helpompi ymmärtää "muuttuja" käsite, jos kuvittelemme sen olevan "laatikko" datalle, jossa on uniikki nimitarra.
 
+<<<<<<< HEAD
 Esimerkiksi muuttuja `message` voidaan kuvitella laatikoksi, joka on merkattu `"message"` tarralla ja jonka sisällä on arvo `"Hello!"`:
+=======
+For instance, the variable `message` can be imagined as a box labelled `"message"` with the value `"Hello!"` in it:
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 ![](variable.svg)
 
 Voimme laittaa laatikkoon minkä tahansa arvon.
 
+<<<<<<< HEAD
 Voimme myös muuttaa sitä niin usein kuin haluamme:
+=======
+We can also change it as many times as we want:
+
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ```js run
 let message;
 
@@ -148,12 +168,21 @@ let message = "That"; // SyntaxError: 'message' has already been declared
 Meidän pitää siis esitellä muuttuja kerran ja sen jälkeen viitata siihen ilman `let` avainsanaa.
 ````
 
+<<<<<<< HEAD
 ```smart header="Funktionaaliset kielet"
 On mielenkiintoista huomata, että on olemassa [funktionaalisia](https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi) ohjelmointikieliä kuten [Scala](http://www.scala-lang.org/) tai [Erlang](http://www.erlang.org/), jotka kieltävät muuttujien arvojen muuttamisen.
+=======
+```smart header="Functional languages"
+It's interesting to note that there exist so-called [pure functional](https://en.wikipedia.org/wiki/Purely_functional_programming) programming languages, such as [Haskell](https://en.wikipedia.org/wiki/Haskell), that forbid changing variable values.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 Tällaisissa kielissä "laatikkoon" varastoitu arvo on siellä ikuisesti. Jos meidän täytyy varastoida jotain muuta, kieli pakottaa meidät luomaan uuden laatikon (esittelemään uuden muuttujan). Vanhaa ei voida käyttää uudelleen.
 
+<<<<<<< HEAD
 Vaikka tämä vaikuttaisi ensinäkemältä vähän oudolta, nämä kielet kykenevät hyvin vakavaan sovelluskehitykseen. Lisäksi on olemassa alueita, kuten rinnakkaislaskelmia, joilla tämä rajoitus tuo tiettyjä etuja. Tällaisen kielen opiskelu (vaikka et aio käyttää sitä pian) on suositeltavaa mielesi laajentamiseksi.
+=======
+Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ```
 
 ## Muuttujien nimeäminen [#variable-naming]
@@ -191,19 +220,32 @@ let 1a; // ei voi alkaa numerolla
 let my-name; // viivoja '-' ei sallita
 ```
 
+<<<<<<< HEAD
 ```smart header="Kirjainkoolla on merkitystä"
 Muuttujat `apple` ja `AppLE` ovat kaksi eri muuttujaa.
 ```
 
 ````smart header="Ei-latinalaiset kirjaimet ovat myös sallittuja, mutta niitä ei suositella"
 On mahdollista käyttää mitä tahansa kieltä, mukaanlukien kyrilliset aakkoset ja jopa hieroglyfit, tähän tapaan:
+=======
+```smart header="Case matters"
+Variables named `apple` and `APPLE` are two different variables.
+```
+
+````smart header="Non-Latin letters are allowed, but not recommended"
+It is possible to use any language, including Cyrillic letters, Chinese logograms and so on, like this:
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 ```js
 let имя = '...';
 let 我 = '...';
 ```
 
+<<<<<<< HEAD
 Periaattessa tässä ei ole virhettä. Tällaiset nimet ovat sallittuja, mutta kansainvälinen tapa on käyttää englantia muuttujien nimissä. Myös pienissä skripteissä, niillä voi olla pitkä elämä. Muista maista tulevien ihmisten on ehkä luettava sitä joskus.
+=======
+Technically, there is no error here. Such names are allowed, but there is an international convention to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it sometime.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ````
 
 ````warn header="Varatut nimet"
@@ -258,12 +300,20 @@ const myBirthday = '18.04.1982';
 myBirthday = '01.01.2001'; // Error, can't reassign the constant!
 ```
 
+<<<<<<< HEAD
 Kun ohjelmoija on varma, ettei muuttuja koskaan muutu, se voidaan esitellä `const` avainsanalla, jolloin varmistutaan arvon pysyvyydestä ja se saadaan kommunikoitua kaikille.
 
+=======
+When a programmer is sure that a variable will never change, they can declare it with `const` to guarantee and communicate that fact to everyone.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 ### Isokirjaimiset vakiomuuttujat
 
+<<<<<<< HEAD
 Laajalle levinnyt käytäntö on käyttää vakiomuuttujia korvaamaan vaikeasti muistettavia arvoja, jotka tunnetaan ennen koodin suorittamista.
+=======
+There is a widespread practice to use constants as aliases for difficult-to-remember values that are known before execution.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 Tällaiset vakiot kirjoitetaan suurten kirjainten ja alaviivojen avulla.
 
@@ -288,16 +338,29 @@ Hyödyt:
 
 Milloin käytämme suuria kirjaimia ja milloin nimeämme vakiot normaalisti? Tehdään siitä selvää.
 
+<<<<<<< HEAD
 Termillä "vakio" tarkoitetaan vain sitä, että muuttujan arvo ei koskaan muutu. On kuitenkin vakioita, jotka tunnetaan ennen koodin suoritusta (kuten värin punainen heksadesimaaliarvo) ja vakioita, jotka *lasketaan* koodin suorituksen aikana, mutta ne eivät muutu ensimmäisen arvon sijoituksen jälkeen.
 
 Esimerkiksi:
+=======
+Being a "constant" just means that a variable's value never changes. But some constants are known before execution (like a hexadecimal value for red) and some constants are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+
+For instance:
+
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 ```js
 const pageLoadTime = /* aika, joka kuluu nettisivun lataamiseen */;
 ```
 
+<<<<<<< HEAD
 Muuttujan `pageLoadTime` arvoa ei tunneta ennen sivun lataamista, joten se kirjoitetaan normaalisti. Se on silti vakio, koska sen arvo ei muutu sijoittamisen jälkeen.
 
 Toisin sanoen, suuria kirjaimia käytetään vain vakiomuuttujissa, joilla on "kovakoodattu" arvo.  
+=======
+The value of `pageLoadTime` is not known before the page load, so it's named normally. But it's still a constant because it doesn't change after the assignment.
+
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 ## Oikeaoppinen nimeäminen
 
@@ -305,18 +368,31 @@ Muuttujista puhuttaessa on vielä yksi erittäin tärkeä asia.
 
 Nimellä pitäisi olla selkeä, itsestäänselvä tarkoitus, joka kuvaa sen varastoimaa dataa.
 
+<<<<<<< HEAD
 Muuttujien nimeäminen on yksi tärkeimmistä ja vaikeimmista taidoista ohjelmoinnissa. Nopea muuttujien nimien vilkaisu voi paljastaa, minkä koodin on kirjoittanut aloittelija ja minkä kokenut sovelluskehittäjä.
 
 Oikeassa projektissa suurin osa ajasta käytetään olemassa olevan koodin muokkaamiseen ja jatkamiseen sen sijaan, että kirjoitettaisiin jotain täysin tyhjästä. Kun palaamme koodin ääreen tehtyämme jotain muuta vähän aikaa, on paljon helpompi löytää tietoa, joka on merkitty hyvin. Toisin sanoen, kun muuttujilla on hyvät nimet.
+=======
+Variable naming is one of the most important and complex skills in programming. A glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+
+In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it's much easier to find information that is well-labelled. Or, in other words, when the variables have good names.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 Käytäthän aikaa hyvän muuttujan nimen keksimiseen ennen kuin esittelet sen. Tämä maksaa itsensä takaisin komeasti.
 
 Muutamia hyviä sääntöjä:
 
+<<<<<<< HEAD
 - Käytä nimiä, jotka ihminen ymmärtää kuten `userName` tai `shoppingCart`.
 - Vältä lyhenteitä ja lyhyitä nimiä kuten `a`, `b`, `c`, jollet todella tiedä mitä olet tekemässä.
 - Tee nimistä maksimaalisen kuvaavia ja tiiviitä. Esimerkkejä huonoista nimistä ovat `data` ja `value`. Tällaiset nimet eivät kerro mitään. Niiden käyttäminen on okei vain silloin, kun koodin konteksti tekee erityisen itsestäänselväksi, mistä datasta ja arvosta on kyse.
 - Sovi ehdoista tiimisi kesken ja omassa mielessäsi. Jos sivuston nykyinen käyttäjä on "user", siihen liittyville muuttujille annetaan nimeksi `currentUser` tai `newUser` sen sijaan, että käytetään nimiä `currentVisitor` tai `newManInTown`.
+=======
+- Use human-readable names like `userName` or `shoppingCart`.
+- Stay away from abbreviations or short names like `a`, `b`, and `c`, unless you know what you're doing.
+- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It's only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
+- Agree on terms within your team and in your mind. If a site visitor is called a "user" then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+>>>>>>> 6236eb8c3cdde729dab761a1d0967a88a1a6197e
 
 Kuulostaa yksinkertaiselle? Se todellakin on, mutta kuvaavien ja tiiviiden muuttujien nimien keksiminen käytännössä ei ole helppoa. Anna palaa.
 
