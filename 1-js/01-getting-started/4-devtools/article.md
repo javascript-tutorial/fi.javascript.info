@@ -22,7 +22,7 @@ Kehitystyökalut avautuvat oletuksena konsoliin (Console).
 
 Sen pitäisi näyttää suurin piirtein tältä:
 
-![chrome](chrome.png)
+![chrome](chrome.webp)
 
 Työkalujen tarkka ulkoasu riippuu Chromen versiosta. Tarkka ulkoasu muuttuu silloin tällöin, mutta sen pitäisi näyttää samankaltaiselta.
 
@@ -49,7 +49,11 @@ Niiden ulkoasu ja tuntuma on melko samanlainen. Kun opit käyttämään yhden se
 
 Safari (Macin selain, jota Windows/Linux eivät tue) on vähän erityinen. Meidän täytyy ensin ottaa "Develop menu" (suom. "kehitysvalikko") käyttöön.
 
+<<<<<<< HEAD
 Avaa "Preferences" (suom. "Asetukset") ja mene kohtaan "Advanced" (suom. "Lisäasetukset"). Alaosasta löytyy valinta:
+=======
+Open Settings and go to the "Advanced" pane. There's a checkbox at the bottom:
+>>>>>>> 540d753e90789205fc6e75c502f68382c87dea9b
 
 ![safari](safari.png)
 
