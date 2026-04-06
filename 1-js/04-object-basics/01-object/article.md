@@ -5,7 +5,7 @@ As we know from the chapter <info:types>, there are eight data types in JavaScri
 
 In contrast, objects are used to store keyed collections of various data and more complex entities. In JavaScript, objects penetrate almost every aspect of the language. So we must understand them first before going in-depth anywhere else.
 
-An object can be created with figure brackets `{…}` with an optional list of *properties*. A property is a "key: value" pair, where `key` is a string (also called a "property name"), and `value` can be anything.
+An object can be created with curly braces `{…}` with an optional list of *properties*. A property is a "key: value" pair, where `key` is a string (also called a "property name"), and `value` can be anything.
 
 We can imagine an object as a cabinet with signed files. Every piece of data is stored in its file by the key. It's easy to find a file by its name or add/remove a file.
 
@@ -20,7 +20,7 @@ let user = {};  // "object literal" syntax
 
 ![](object-user-empty.svg)
 
-Usually, the figure brackets `{...}` are used. That declaration is called an *object literal*.
+Usually, the curly braces `{...}` are used. That declaration is called an *object literal*.
 
 ## Literals and properties
 
@@ -355,7 +355,7 @@ In the code above, the property `obj.test` technically exists. So the `in` opera
 Situations like this happen very rarely, because `undefined` should not be explicitly assigned. We mostly use `null` for "unknown" or "empty" values. So the `in` operator is an exotic guest in the code.
 
 
-## The "for..in" loop
+## The "for..in" loop [#forin]
 
 To walk over all keys of an object, there exists a special form of the loop: `for..in`. This is a completely different thing from the `for(;;)` construct that we studied before.
 
