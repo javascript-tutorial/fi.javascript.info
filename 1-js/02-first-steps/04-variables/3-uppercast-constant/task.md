@@ -12,24 +12,14 @@ const birthday = '18.04.1982';
 const age = someCode(birthday);
 ```
 
-<<<<<<< HEAD
-Meillä on vakiomuuttuja `birthday` päivämäärä ja `age` lasketaan muuttujan `birthday` avulla jonkin koodin avulla (sitä ei ole tässä näkyvillä, koska yksityiskohdilla ei ole tässä kohtaa merkitystä).
-=======
-Here we have a constant `birthday` for the date, and also the `age` constant.
+Tässä meillä on vakiomuuttuja `birthday` päivämäärälle sekä vakiomuuttuja `age`.
 
-The `age` is calculated from `birthday` using `someCode()`, which means a function call that we didn't explain yet (we will soon!), but the details don't matter here, the point is that `age` is calculated somehow based on the `birthday`.
->>>>>>> 52c1e61915bc8970a950a3f59bd845827e49b4bf
+`age` lasketaan `birthday`-muuttujasta kutsulla `someCode()`. Se on funktiokutsu, jota emme ole vielä selittäneet (selitämme pian!), mutta yksityiskohdilla ei ole tässä merkitystä. Olennaista on, että `age` lasketaan jotenkin `birthday`-arvon perusteella.
 
 Käyttäisitkö isoja kirjaimia muuttujalle `birthday`? Entä `age`? Tai jopa molemmissa?
 
 ```js
-<<<<<<< HEAD
-const BIRTHDAY = '18.04.1982'; // käytä isoja kirjaimia?
+const BIRTHDAY = '18.04.1982'; // syntymäpäivä isoilla kirjaimilla?
 
-const AGE = someCode(BIRTHDAY); // käytä isoja kirjaimia?
-=======
-const BIRTHDAY = '18.04.1982'; // make birthday uppercase?
-
-const AGE = someCode(BIRTHDAY); // make age uppercase?
->>>>>>> 52c1e61915bc8970a950a3f59bd845827e49b4bf
+const AGE = someCode(BIRTHDAY); // ikä isoilla kirjaimilla?
 ```
