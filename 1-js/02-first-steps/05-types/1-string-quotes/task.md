@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# String quotes
+# Merkkijonon lainausmerkit
 
-What is the output of the script?
+Mitä skripti tulostaa?
 
 ```js
 let name = "Ilya";

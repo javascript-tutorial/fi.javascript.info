@@ -1,52 +1,52 @@
-# Data types
+# Tietotyypit
 
-A value in JavaScript is always of a certain type. For example, a string or a number.
+JavaScriptissa arvo on aina jotain tiettyä tyyppiä, esimerkiksi merkkijono tai luku.
 
-There are eight basic data types in JavaScript. Here, we'll cover them in general and in the next chapters we'll talk about each of them in detail.
+JavaScriptissa on kahdeksan perustietotyyppiä. Käymme ne tässä läpi yleisellä tasolla, ja seuraavissa kappaleissa käsittelemme jokaista niistä yksityiskohtaisesti.
 
-We can put any type in a variable. For example, a variable can at one moment be a string and then store a number:
+Muuttujaan voi laittaa mitä tahansa tyyppiä olevan arvon. Muuttujassa voi esimerkiksi olla ensin merkkijono ja sen jälkeen luku:
 
 ```js
-// no error
+// ei virhettä
 let message = "hello";
 message = 123456;
 ```
 
-Programming languages that allow such things, such as JavaScript, are called "dynamically typed", meaning that there exist data types, but variables are not bound to any of them.
+Ohjelmointikieliä, jotka sallivat tällaisen, kuten JavaScript, kutsutaan "dynaamisesti tyypitetyiksi". Se tarkoittaa, että tietotyyppejä on olemassa, mutta muuttujat eivät ole sidottuja mihinkään niistä.
 
-## Number
+## Luku
 
 ```js
 let n = 123;
 n = 12.345;
 ```
 
-The *number* type represents both integer and floating point numbers.
+Tyyppi *number* (luku) kattaa sekä kokonaisluvut että liukuluvut.
 
-There are many operations for numbers, e.g. multiplication `*`, division `/`, addition `+`, subtraction `-`, and so on.
+Luvuille on monia operaatioita, esimerkiksi kertolasku `*`, jakolasku `/`, yhteenlasku `+`, vähennyslasku `-` ja niin edelleen.
 
-Besides regular numbers, there are so-called "special numeric values" which also belong to this data type: `Infinity`, `-Infinity` and `NaN`.
+Tavallisten lukujen lisäksi on niin sanottuja "erityisiä numeerisia arvoja", jotka myös kuuluvat tähän tietotyyppiin: `Infinity`, `-Infinity` ja `NaN`.
 
-- `Infinity` represents the mathematical [Infinity](https://en.wikipedia.org/wiki/Infinity) ∞. It is a special value that's greater than any number.
+- `Infinity` tarkoittaa matemaattista [ääretöntä](https://fi.wikipedia.org/wiki/Äärettömyys) ∞. Se on erityinen arvo, joka on suurempi kuin mikään luku.
 
-    We can get it as a result of division by zero:
+    Saamme sen tuloksena, kun jaamme nollalla:
 
     ```js run
     alert( 1 / 0 ); // Infinity
     ```
 
-    Or just reference it directly:
+    Tai voimme viitata siihen suoraan:
 
     ```js run
     alert( Infinity ); // Infinity
     ```
-- `NaN` represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance:
+- `NaN` tarkoittaa laskuvirhettä. Se on virheellisen tai määrittelemättömän matemaattisen operaation tulos, esimerkiksi:
 
     ```js run
-    alert( "not a number" / 2 ); // NaN, such division is erroneous
+    alert( "not a number" / 2 ); // NaN, tällainen jakolasku on virheellinen
     ```
 
-    `NaN` is sticky. Any further mathematical operation on `NaN` returns `NaN`:
+    `NaN` on "tarttuva". Mikä tahansa myöhempi matemaattinen operaatio `NaN`:lle palauttaa `NaN`:
 
     ```js run
     alert( NaN + 1 ); // NaN
@@ -54,49 +54,49 @@ Besides regular numbers, there are so-called "special numeric values" which also
     alert( "not a number" / 2 - 1 ); // NaN
     ```
 
-    So, if there's a `NaN` somewhere in a mathematical expression, it propagates to the whole result (there's only one exception to that: `NaN ** 0` is `1`).
+    Jos siis matemaattisessa lausekkeessa on jossain `NaN`, se leviää koko tulokseen (tähän on vain yksi poikkeus: `NaN ** 0` on `1`).
 
-```smart header="Mathematical operations are safe"
-Doing maths is "safe" in JavaScript. We can do anything: divide by zero, treat non-numeric strings as numbers, etc.
+```smart header="Matemaattiset operaatiot ovat turvallisia"
+Laskeminen on JavaScriptissa "turvallista". Voimme tehdä mitä tahansa: jakaa nollalla, käsitellä muita kuin numeerisia merkkijonoja lukuina ja niin edelleen.
 
-The script will never stop with a fatal error ("die"). At worst, we'll get `NaN` as the result.
+Skripti ei koskaan pysähdy kohtalokkaaseen virheeseen ("kuole"). Pahimmassa tapauksessa saamme tulokseksi `NaN`.
 ```
 
-Special numeric values formally belong to the "number" type. Of course they are not numbers in the common sense of this word.
+Erityiset numeeriset arvot kuuluvat muodollisesti "number"-tyyppiin. Tavallisessa merkityksessä ne eivät tietenkään ole lukuja.
 
-We'll see more about working with numbers in the chapter <info:number>.
+Lukujen käsittelystä kerrotaan lisää kappaleessa <info:number>.
 
 ## BigInt [#bigint-type]
 
-In JavaScript, the "number" type cannot safely represent integer values larger than <code>(2<sup>53</sup>-1)</code> (that's `9007199254740991`), or less than <code>-(2<sup>53</sup>-1)</code> for negatives.
+JavaScriptissa "number"-tyyppi ei pysty esittämään luotettavasti kokonaislukuja, jotka ovat suurempia kuin <code>(2<sup>53</sup>-1)</code> (eli `9007199254740991`) tai negatiivisina pienempiä kuin <code>-(2<sup>53</sup>-1)</code>.
 
-To be really precise, the "number" type can store larger integers (up to <code>1.7976931348623157 * 10<sup>308</sup></code>), but outside of the safe integer range <code>±(2<sup>53</sup>-1)</code> there'll be a precision error, because not all digits fit into the fixed 64-bit storage. So an "approximate" value may be stored.
+Tarkalleen ottaen "number"-tyyppiin voi tallentaa suurempiakin kokonaislukuja (aina lukuun <code>1.7976931348623157 * 10<sup>308</sup></code> asti), mutta turvallisen kokonaislukualueen <code>±(2<sup>53</sup>-1)</code> ulkopuolella syntyy tarkkuusvirhe, koska kaikki numerot eivät mahdu kiinteään 64-bittiseen tallennustilaan. Tallennettu arvo voi siis olla "likimääräinen".
 
-For example, these two numbers (right above the safe range) are the same:
+Esimerkiksi nämä kaksi lukua (heti turvallisen alueen yläpuolella) ovat samat:
 
 ```js
 console.log(9007199254740991 + 1); // 9007199254740992
 console.log(9007199254740991 + 2); // 9007199254740992
 ```
 
-So to say, all odd integers greater than <code>(2<sup>53</sup>-1)</code> can't be stored at all in the "number" type.
+Voidaan siis sanoa, että parittomia kokonaislukuja, jotka ovat suurempia kuin <code>(2<sup>53</sup>-1)</code>, ei voi tallentaa "number"-tyyppiin lainkaan.
 
-For most purposes <code>±(2<sup>53</sup>-1)</code> range is quite enough, but sometimes we need the entire range of really big integers, e.g. for cryptography or microsecond-precision timestamps.
+Useimpiin tarkoituksiin alue <code>±(2<sup>53</sup>-1)</code> riittää hyvin, mutta joskus tarvitsemme koko todella suurten kokonaislukujen alueen, esimerkiksi salauksessa tai mikrosekunnin tarkkuisissa aikaleimoissa.
 
-`BigInt` type was recently added to the language to represent integers of arbitrary length.
+Tyyppi `BigInt` lisättiin kieleen hiljattain esittämään mielivaltaisen pituisia kokonaislukuja.
 
-A `BigInt` value is created by appending `n` to the end of an integer:
+`BigInt`-arvo luodaan lisäämällä kokonaisluvun loppuun `n`:
 
 ```js
-// the "n" at the end means it's a BigInt
+// lopussa oleva "n" tarkoittaa, että kyseessä on BigInt
 const bigInt = 1234567890123456789012345678901234567890n;
 ```
 
-As `BigInt` numbers are rarely needed, we don't cover them here, but devoted them a separate chapter <info:bigint>. Read it when you need such big numbers.
+Koska `BigInt`-lukuja tarvitaan harvoin, emme käsittele niitä tässä, vaan niille on oma kappaleensa <info:bigint>. Lue se, kun tarvitset näin suuria lukuja.
 
-## String
+## Merkkijono
 
-A string in JavaScript must be surrounded by quotes.
+JavaScriptissa merkkijonon täytyy olla lainausmerkkien sisällä.
 
 ```js
 let str = "Hello";
@@ -104,122 +104,122 @@ let str2 = 'Single quotes are ok too';
 let phrase = `can embed another ${str}`;
 ```
 
-In JavaScript, there are 3 types of quotes.
+JavaScriptissa on kolmenlaisia lainausmerkkejä.
 
-1. Double quotes: `"Hello"`.
-2. Single quotes: `'Hello'`.
-3. Backticks: <code>&#96;Hello&#96;</code>.
+1. Kaksinkertaiset lainausmerkit: `"Hello"`.
+2. Yksinkertaiset lainausmerkit: `'Hello'`.
+3. Takahipsut (engl. backticks): <code>&#96;Hello&#96;</code>.
 
-Double and single quotes are "simple" quotes. There's practically no difference between them in JavaScript.
+Kaksinkertaiset ja yksinkertaiset lainausmerkit ovat "tavallisia" lainausmerkkejä. JavaScriptissa niiden välillä ei käytännössä ole eroa.
 
-Backticks are "extended functionality" quotes. They allow us to embed variables and expressions into a string by wrapping them in `${…}`, for example:
+Takahipsut ovat "laajennetun toiminnallisuuden" lainausmerkit. Niiden avulla merkkijonoon voi upottaa muuttujia ja lausekkeita kirjoittamalla ne merkintöjen `${…}` sisään, esimerkiksi:
 
 ```js run
 let name = "John";
 
-// embed a variable
+// upotetaan muuttuja
 alert( `Hello, *!*${name}*/!*!` ); // Hello, John!
 
-// embed an expression
+// upotetaan lauseke
 alert( `the result is *!*${1 + 2}*/!*` ); // the result is 3
 ```
 
-The expression inside `${…}` is evaluated and the result becomes a part of the string. We can put anything in there: a variable like `name` or an arithmetical expression like `1 + 2` or something more complex.
+Merkintöjen `${…}` sisällä oleva lauseke arvioidaan, ja tuloksesta tulee osa merkkijonoa. Sinne voi laittaa mitä tahansa: muuttujan kuten `name`, laskutoimituksen kuten `1 + 2` tai jotain monimutkaisempaa.
 
-Please note that this can only be done in backticks. Other quotes don't have this embedding functionality!
+Huomaa, että tämä onnistuu vain takahipsujen kanssa. Muissa lainausmerkeissä tällaista upotusta ei ole!
 ```js run
-alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (double quotes do nothing)
+alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (kaksinkertaiset lainausmerkit eivät tee mitään)
 ```
 
-We'll cover strings more thoroughly in the chapter <info:string>.
+Käsittelemme merkkijonoja perusteellisemmin kappaleessa <info:string>.
 
-```smart header="There is no *character* type."
-In some languages, there is a special "character" type for a single character. For example, in the C language and in Java it is called "char".
+```smart header="*Merkki*-tyyppiä ei ole."
+Joissakin kielissä on erityinen "merkki"-tyyppi yksittäiselle merkille. Esimerkiksi C-kielessä ja Javassa sen nimi on "char".
 
-In JavaScript, there is no such type. There's only one type: `string`. A string may consist of zero characters (be empty), one character or many of them.
+JavaScriptissa tällaista tyyppiä ei ole. On vain yksi tyyppi: `string`. Merkkijonossa voi olla nolla merkkiä (se on tyhjä), yksi merkki tai monta merkkiä.
 ```
 
-## Boolean (logical type)
+## Boolean (totuusarvo)
 
-The boolean type has only two values: `true` and `false`.
+Boolean-tyypillä on vain kaksi arvoa: `true` ja `false`.
 
-This type is commonly used to store yes/no values: `true` means "yes, correct", and `false` means "no, incorrect".
+Tätä tyyppiä käytetään yleensä kyllä/ei-arvojen tallentamiseen: `true` tarkoittaa "kyllä, pitää paikkansa" ja `false` tarkoittaa "ei, ei pidä paikkaansa".
 
-For instance:
+Esimerkiksi:
 
 ```js
-let nameFieldChecked = true; // yes, name field is checked
-let ageFieldChecked = false; // no, age field is not checked
+let nameFieldChecked = true; // kyllä, nimikenttä on valittu
+let ageFieldChecked = false; // ei, ikäkenttää ei ole valittu
 ```
 
-Boolean values also come as a result of comparisons:
+Totuusarvoja saadaan myös vertailujen tuloksena:
 
 ```js run
 let isGreater = 4 > 1;
 
-alert( isGreater ); // true (the comparison result is "yes")
+alert( isGreater ); // true (vertailun tulos on "kyllä")
 ```
 
-We'll cover booleans more deeply in the chapter <info:logical-operators>.
+Käsittelemme totuusarvoja syvällisemmin kappaleessa <info:logical-operators>.
 
-## The "null" value
+## Arvo "null"
 
-The special `null` value does not belong to any of the types described above.
+Erityinen arvo `null` ei kuulu mihinkään edellä kuvatuista tyypeistä.
 
-It forms a separate type of its own which contains only the `null` value:
+Se muodostaa oman erillisen tyyppinsä, jonka ainoa arvo on `null`:
 
 ```js
 let age = null;
 ```
 
-In JavaScript, `null` is not a "reference to a non-existing object" or a "null pointer" like in some other languages.
+JavaScriptissa `null` ei ole "viittaus olemattomaan olioon" tai "nollaosoitin" kuten joissakin muissa kielissä.
 
-It's just a special value which represents "nothing", "empty" or "value unknown".
+Se on vain erityinen arvo, joka tarkoittaa "ei mitään", "tyhjä" tai "arvo tuntematon".
 
-The code above states that `age` is unknown.
+Yllä oleva koodi kertoo, että `age` on tuntematon.
 
-## The "undefined" value
+## Arvo "undefined"
 
-The special value `undefined` also stands apart. It makes a type of its own, just like `null`.
+Myös erityinen arvo `undefined` on erillään muista. Se muodostaa oman tyyppinsä, samoin kuin `null`.
 
-The meaning of `undefined` is "value is not assigned".
+`undefined` tarkoittaa "arvoa ei ole sijoitettu".
 
-If a variable is declared, but not assigned, then its value is `undefined`:
+Jos muuttuja on esitelty, mutta siihen ei ole sijoitettu arvoa, sen arvo on `undefined`:
 
 ```js run
 let age;
 
-alert(age); // shows "undefined"
+alert(age); // näyttää "undefined"
 ```
 
-Technically, it is possible to explicitly assign `undefined` to a variable:
+Teknisesti muuttujaan on mahdollista sijoittaa `undefined` myös itse:
 
 ```js run
 let age = 100;
 
-// change the value to undefined
+// muutetaan arvoksi undefined
 age = undefined;
 
 alert(age); // "undefined"
 ```
 
-...But we don't recommend doing that. Normally, one uses `null` to assign an "empty" or "unknown" value to a variable, while `undefined` is reserved as a default initial value for unassigned things.
+...Emme kuitenkaan suosittele sitä. Tavallisesti "tyhjä" tai "tuntematon" arvo sijoitetaan muuttujaan käyttämällä `null`-arvoa, kun taas `undefined` on varattu oletusalkuarvoksi asioille, joihin ei ole sijoitettu arvoa.
 
-## Objects and Symbols
+## Oliot ja symbolit
 
-The `object` type is special.
+Tyyppi `object` (olio) on erityinen.
 
-All other types are called "primitive" because their values can contain only a single thing (be it a string or a number or whatever). In contrast, objects are used to store collections of data and more complex entities.
+Kaikkia muita tyyppejä kutsutaan "primitiivisiksi", koska niiden arvot voivat sisältää vain yhden asian (oli se sitten merkkijono, luku tai mitä tahansa muuta). Olioihin sen sijaan tallennetaan tietokokoelmia ja monimutkaisempia kokonaisuuksia.
 
-Being that important, objects deserve a special treatment. We'll deal with them later in the chapter <info:object>, after we learn more about primitives.
+Koska oliot ovat niin tärkeitä, ne ansaitsevat erityiskohtelun. Käsittelemme niitä myöhemmin kappaleessa <info:object>, kun olemme oppineet lisää primitiiveistä.
 
-The `symbol` type is used to create unique identifiers for objects. We have to mention it here for the sake of completeness, but also postpone the details till we know objects.
+Tyyppiä `symbol` (symboli) käytetään olioiden yksilöllisten tunnisteiden luomiseen. Mainitsemme sen tässä kokonaisuuden vuoksi, mutta yksityiskohdat jätetään siihen asti, kun tunnemme oliot.
 
-## The typeof operator [#type-typeof]
+## typeof-operaattori [#type-typeof]
 
-The `typeof` operator returns the type of the operand. It's useful when we want to process values of different types differently or just want to do a quick check.
+Operaattori `typeof` palauttaa operandin tyypin. Siitä on hyötyä, kun haluamme käsitellä eri tyyppisiä arvoja eri tavoin tai haluamme vain tarkistaa tyypin nopeasti.
 
-A call to `typeof x` returns a string with the type name:
+Kutsu `typeof x` palauttaa merkkijonon, jossa on tyypin nimi:
 
 ```js
 typeof undefined // "undefined"
@@ -247,41 +247,41 @@ typeof alert // "function"  (3)
 */!*
 ```
 
-The last three lines may need additional explanation:
+Kolme viimeistä riviä saattavat vaatia lisäselitystä:
 
-1. `Math` is a built-in object that provides mathematical operations. We will learn it in the chapter <info:number>. Here, it serves just as an example of an object.
-2. The result of `typeof null` is `"object"`. That's an officially recognized error in `typeof`, coming from very early days of JavaScript and kept for compatibility. Definitely, `null` is not an object. It is a special value with a separate type of its own. The behavior of `typeof` is wrong here.
-3. The result of `typeof alert` is `"function"`, because `alert` is a function. We'll study functions in the next chapters where we'll also see that there's no special "function" type in JavaScript. Functions belong to the object type. But `typeof` treats them differently, returning `"function"`. That also comes from the early days of JavaScript. Technically, such behavior isn't correct, but can be convenient in practice.
+1. `Math` on sisäänrakennettu olio, joka tarjoaa matemaattisia operaatioita. Tutustumme siihen kappaleessa <info:number>. Tässä se on vain esimerkki oliosta.
+2. `typeof null` palauttaa `"object"`. Kyseessä on virallisesti tunnustettu virhe `typeof`-operaattorissa. Virhe on peräisin JavaScriptin aivan alkuajoilta, ja se on säilytetty yhteensopivuuden vuoksi. `null` ei todellakaan ole olio. Se on erityinen arvo, jolla on oma erillinen tyyppinsä. `typeof` toimii tässä väärin.
+3. `typeof alert` palauttaa `"function"`, koska `alert` on funktio. Opiskelemme funktioita seuraavissa kappaleissa, joissa näemme myös, että JavaScriptissa ei ole erityistä "function"-tyyppiä. Funktiot kuuluvat olio-tyyppiin. `typeof` kuitenkin käsittelee niitä eri tavalla ja palauttaa `"function"`. Tämäkin on peräisin JavaScriptin alkuajoilta. Teknisesti tällainen toiminta ei ole oikein, mutta se voi olla käytännössä kätevää.
 
-```smart header="The `typeof(x)` syntax"
-You may also come across another syntax: `typeof(x)`. It's the same as `typeof x`.
+```smart header="Syntaksi `typeof(x)`"
+Saatat törmätä myös toiseen syntaksiin: `typeof(x)`. Se on sama asia kuin `typeof x`.
 
-To put it clear: `typeof` is an operator, not a function. The parentheses here aren't a part of `typeof`. It's the kind of parentheses used for mathematical grouping.
+Selvyyden vuoksi: `typeof` on operaattori, ei funktio. Sulkeet eivät tässä ole osa `typeof`-operaattoria. Ne ovat samanlaiset sulkeet, joita käytetään matematiikassa ryhmittelyyn.
 
-Usually, such parentheses contain a mathematical expression, such as `(2 + 2)`, but here they contain only one argument `(x)`. Syntactically, they allow to avoid a space between the `typeof` operator and its argument, and some people like it.
+Yleensä tällaisten sulkeiden sisällä on matemaattinen lauseke, kuten `(2 + 2)`, mutta tässä niiden sisällä on vain yksi argumentti `(x)`. Syntaktisesti sulkeiden avulla voi jättää välilyönnin pois `typeof`-operaattorin ja sen argumentin välistä, ja jotkut pitävät siitä.
 
-Some people prefer `typeof(x)`, although the `typeof x` syntax is much more common.
+Jotkut suosivat muotoa `typeof(x)`, vaikka muoto `typeof x` on paljon yleisempi.
 ```
 
-## Summary
+## Yhteenveto
 
-There are 8 basic data types in JavaScript.
+JavaScriptissa on 8 perustietotyyppiä.
 
-- Seven primitive data types:
-    - `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
-    - `bigint` for integer numbers of arbitrary length.
-    - `string` for strings. A string may have zero or more characters, there's no separate single-character type.
-    - `boolean` for `true`/`false`.
-    - `null` for unknown values -- a standalone type that has a single value `null`.
-    - `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
-    - `symbol` for unique identifiers.
-- And one non-primitive data type:
-    - `object` for more complex data structures.
+- Seitsemän primitiivistä tietotyyppiä:
+    - `number` kaikenlaisille luvuille: kokonaisluvuille ja liukuluvuille. Kokonaislukujen alue on rajattu <code>±(2<sup>53</sup>-1)</code>.
+    - `bigint` mielivaltaisen pituisille kokonaisluvuille.
+    - `string` merkkijonoille. Merkkijonossa voi olla nolla tai useampia merkkejä, eikä erillistä yksittäisen merkin tyyppiä ole.
+    - `boolean` arvoille `true`/`false`.
+    - `null` tuntemattomille arvoille -- erillinen tyyppi, jolla on yksi arvo `null`.
+    - `undefined` arvoille, joita ei ole sijoitettu -- erillinen tyyppi, jolla on yksi arvo `undefined`.
+    - `symbol` yksilöllisille tunnisteille.
+- Ja yksi ei-primitiivinen tietotyyppi:
+    - `object` monimutkaisemmille tietorakenteille.
 
-The `typeof` operator allows us to see which type is stored in a variable.
+`typeof`-operaattorilla voi nähdä, minkä tyyppinen arvo muuttujassa on.
 
-- Usually used as `typeof x`, but `typeof(x)` is also possible.
-- Returns a string with the name of the type, like `"string"`.
-- For `null` returns `"object"` -- this is an error in the language, it's not actually an object.
+- Sitä käytetään yleensä muodossa `typeof x`, mutta myös `typeof(x)` on mahdollinen.
+- Se palauttaa merkkijonon, jossa on tyypin nimi, esimerkiksi `"string"`.
+- `null`-arvolle se palauttaa `"object"` -- tämä on virhe kielessä, sillä kyseessä ei oikeasti ole olio.
 
-In the next chapters, we'll concentrate on primitive values and once we're familiar with them, we'll move on to objects.
+Seuraavissa kappaleissa keskitymme primitiivisiin arvoihin, ja kun ne ovat tuttuja, siirrymme olioihin.
