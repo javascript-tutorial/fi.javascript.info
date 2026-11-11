@@ -1,15 +1,15 @@
 
-Backticks embed the expression inside `${...}` into the string.
+Takahipsut upottavat merkkijonoon merkintöjen `${...}` sisällä olevan lausekkeen.
 
 ```js run
 let name = "Ilya";
 
-// the expression is a number 1
+// lauseke on luku 1
 alert( `hello ${1}` ); // hello 1
 
-// the expression is a string "name"
+// lauseke on merkkijono "name"
 alert( `hello ${"name"}` ); // hello name
 
-// the expression is a variable, embed it
+// lauseke on muuttuja, upotetaan se
 alert( `hello ${name}` ); // hello Ilya
 ```
