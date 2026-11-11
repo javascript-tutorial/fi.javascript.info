@@ -12,13 +12,8 @@ IDE lataa projektin (joka voi sisältää monia tiedostoja), mahdollistaa navigo
 
 Jos et ole vielä valinnut IDE:tä, harkitse seuraavia:
 
-<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
-- [WebStorm](http://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
-=======
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
->>>>>>> 52c1e61915bc8970a950a3f59bd845827e49b4bf
+- [WebStorm](https://www.jetbrains.com/webstorm/) (järjestelmäriippumaton, maksullinen).
 
 Windowsille on saatavilla myös "Visual Studio", joka ei ole sama kuin "Visual Studio Code". "Visual Studio" on maksullinen ja mahdikas editori pelkästään Windowsille ja sopii loistavasti .NET-alustalle. Se on hyvä myös JavaScriptille. Saatavilla on myös ilmaisversio [Visual Studio Community](https://www.visualstudio.com/vs/community/).
 
@@ -34,28 +29,11 @@ Olennaisin ero "kevyen editorin" ja "IDE:n" välillä on, että IDE toimii proje
 
 Käytännössä kevyihin editoreihin voi olla saatavilla monia lisäosia mukaan lukien sellaisia, jotka tekevät kansiotason syntaksin analysointia tai tarjoavat kirjoitetun tekstin automaattista täydennystä, joten editorityyppien välillä ei ole selkeää rajausta.
 
-<<<<<<< HEAD
-Seuraavat vaihtoehdot ansaitsevat huomiosi:
+Vaihtoehtoja on monia, esimerkiksi:
 
-<<<<<<< HEAD
-- [Atom](https://atom.io/) (järjestelmäriippumaton, ilmainen).
-- [Visual Studio Code](https://code.visualstudio.com/) (järjestelmäriippumaton, ilmainen).
-- [Sublime Text](http://www.sublimetext.com) (järjestelmäriippumaton, shareware).
+- [Sublime Text](https://www.sublimetext.com/) (järjestelmäriippumaton, shareware).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, ilmainen).
-- [Vim](http://www.vim.org/) ja [Emacs](https://www.gnu.org/software/emacs/) ovat myös siistejä, jos tiedät, miten niitä käytetään.
-=======
-- [Atom](https://atom.io/) (cross-platform, free).
-- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
-- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
-- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
->>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
-=======
-There are many options, for instance:
-
-- [Sublime Text](https://www.sublimetext.com/) (cross-platform, shareware).
-- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
-- [Vim](https://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
->>>>>>> 52c1e61915bc8970a950a3f59bd845827e49b4bf
+- [Vim](https://www.vim.org/) ja [Emacs](https://www.gnu.org/software/emacs/) ovat myös siistejä, jos osaat käyttää niitä.
 
 ## Ei riidellä
 
@@ -63,13 +41,9 @@ Ylle listatut editorit ovat sellaisia, joita minä tai hyvinä ohjelmoijina pit�
 
 Suuressa maailmassamme on muitakin hyviä editoreja. Valitse se, josta pidät eniten.
 
-<<<<<<< HEAD
 Editorin, aivan kuten muidenkin työkalujen, valinta on yksilöllinen päätös ja riippuu omista projekteistasi, tavoistasi ja henkilökohtaisista mieltymyksistäsi.
-=======
-The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
 
-The author's personal opinion:
+Kirjoittajan henkilökohtainen mielipide:
 
-- I'd use [Visual Studio Code](https://code.visualstudio.com/) if I develop mostly frontend.
-- Otherwise, if it's mostly another language/platform and partially frontend, then consider other editors, such as XCode (Mac), Visual Studio (Windows) or Jetbrains family (Webstorm, PHPStorm, RubyMine etc, depending on the language).
->>>>>>> 52c1e61915bc8970a950a3f59bd845827e49b4bf
+- Käyttäisin [Visual Studio Codea](https://code.visualstudio.com/), jos tekisin enimmäkseen frontend-kehitystä.
+- Jos taas työ on enimmäkseen jollain muulla kielellä tai alustalla ja vain osittain frontendiä, kannattaa harkita muita editoreja, kuten XCodea (Mac), Visual Studiota (Windows) tai JetBrainsin tuoteperhettä (Webstorm, PHPStorm, RubyMine jne. kielestä riippuen).
