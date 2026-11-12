@@ -1,105 +1,105 @@
-# Interaction: alert, prompt, confirm
+# Vuorovaikutus: alert, prompt, confirm
 
-As we'll be using the browser as our demo environment, let's see a couple of functions to interact with the user: `alert`, `prompt` and `confirm`.
+Koska käytämme selainta esimerkkiympäristönämme, katsotaan muutamaa funktiota, joilla voi olla vuorovaikutuksessa käyttäjän kanssa: `alert`, `prompt` ja `confirm`.
 
 ## alert
 
-This one we've seen already. It shows a message and waits for the user to press "OK".
+Tämä onkin jo tuttu. Se näyttää viestin ja odottaa, että käyttäjä painaa "OK".
 
-For example:
+Esimerkiksi:
 
 ```js run
-alert("Hello");
+alert("Hei");
 ```
 
-The mini-window with the message is called a *modal window*. The word "modal" means that the visitor can't interact with the rest of the page, press other buttons, etc, until they have dealt with the window. In this case -- until they press "OK".
+Pientä ikkunaa, jossa viesti näkyy, kutsutaan *modaali-ikkunaksi*. Sana "modaali" tarkoittaa, että vierailija ei voi käyttää muuta sivua, painaa muita painikkeita jne., ennen kuin hän on käsitellyt ikkunan. Tässä tapauksessa siihen asti, kunnes hän painaa "OK".
 
 ## prompt
 
-The function `prompt` accepts two arguments:
+Funktio `prompt` ottaa kaksi argumenttia:
 
 ```js no-beautify
 result = prompt(title, [default]);
 ```
 
-It shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel.
+Se näyttää modaali-ikkunan, jossa on tekstiviesti, syöttökenttä vierailijalle sekä painikkeet OK ja Peru (engl. Cancel).
 
 `title`
-: The text to show the visitor.
+: Teksti, joka näytetään vierailijalle.
 
 `default`
-: An optional second parameter, the initial value for the input field.
+: Valinnainen toinen parametri, syöttökentän alkuarvo.
 
-```smart header="The square brackets in syntax `[...]`"
-The square brackets around `default` in the syntax above denote that the parameter is optional, not required.
+```smart header="Hakasulkeet syntaksissa `[...]`"
+Hakasulkeet parametrin `default` ympärillä yllä olevassa syntaksissa tarkoittavat, että parametri on valinnainen eikä pakollinen.
 ```
 
-The visitor can type something in the prompt input field and press OK. Then we get that text in the `result`. Or they can cancel the input by pressing Cancel or hitting the `key:Esc` key, then we get `null` as the `result`.
+Vierailija voi kirjoittaa jotain syöttökenttään ja painaa OK. Silloin saamme tekstin muuttujaan `result`. Vierailija voi myös perua syötteen painamalla Peru tai näppäintä `key:Esc`, jolloin `result` saa arvon `null`.
 
-The call to `prompt` returns the text from the input field or `null` if the input was canceled.
+Funktion `prompt` kutsu palauttaa syöttökentän tekstin tai `null`, jos syöte peruttiin.
 
-For instance:
+Esimerkiksi:
 
 ```js run
-let age = prompt('How old are you?', 100);
+let age = prompt('Kuinka vanha olet?', 100);
 
-alert(`You are ${age} years old!`); // You are 100 years old!
+alert(`Olet ${age} vuotta vanha!`); // Olet 100 vuotta vanha!
 ```
 
-````warn header="In IE: always supply a `default`"
-The second parameter is optional, but if we don't supply it, Internet Explorer will insert the text `"undefined"` into the prompt.
+````warn header="IE:ssä: anna aina `default`"
+Toinen parametri on valinnainen, mutta jos emme anna sitä, Internet Explorer lisää kehotteeseen tekstin `"undefined"`.
 
-Run this code in Internet Explorer to see:
+Aja tämä koodi Internet Explorerissa nähdäksesi sen:
 
 ```js run
-let test = prompt("Test");
+let test = prompt("Testi");
 ```
 
-So, for prompts to look good in IE, we recommend always providing the second argument:
+Jotta kehotteet näyttäisivät hyviltä myös IE:ssä, suosittelemme antamaan aina toisen argumentin:
 
 ```js run
-let test = prompt("Test", ''); // <-- for IE
+let test = prompt("Testi", ''); // <-- IE:tä varten
 ```
 ````
 
 ## confirm
 
-The syntax:
+Syntaksi:
 
 ```js
 result = confirm(question);
 ```
 
-The function `confirm` shows a modal window with a `question` and two buttons: OK and Cancel.
+Funktio `confirm` näyttää modaali-ikkunan, jossa on kysymys `question` ja kaksi painiketta: OK ja Peru.
 
-The result is `true` if OK is pressed and `false` otherwise.
+Tulos on `true`, jos painetaan OK, ja muuten `false`.
 
-For example:
+Esimerkiksi:
 
 ```js run
-let isBoss = confirm("Are you the boss?");
+let isBoss = confirm("Oletko sinä pomo?");
 
-alert( isBoss ); // true if OK is pressed
+alert( isBoss ); // true, jos painetaan OK
 ```
 
-## Summary
+## Yhteenveto
 
-We covered 3 browser-specific functions to interact with visitors:
+Kävimme läpi kolme selainkohtaista funktiota, joilla voi olla vuorovaikutuksessa vierailijoiden kanssa:
 
 `alert`
-: shows a message.
+: näyttää viestin.
 
 `prompt`
-: shows a message asking the user to input text. It returns the text or, if Cancel button or `key:Esc` is clicked, `null`.
+: näyttää viestin, joka pyytää käyttäjää syöttämään tekstiä. Se palauttaa tekstin, tai `null`, jos painetaan Peru tai `key:Esc`.
 
 `confirm`
-: shows a message and waits for the user to press "OK" or "Cancel". It returns `true` for OK and `false` for Cancel/`key:Esc`.
+: näyttää viestin ja odottaa, että käyttäjä painaa "OK" tai "Peru". Se palauttaa `true`, jos painetaan OK, ja `false`, jos painetaan Peru tai `key:Esc`.
 
-All these methods are modal: they pause script execution and don't allow the visitor to interact with the rest of the page until the window has been dismissed.
+Kaikki nämä metodit avaavat modaali-ikkunan: ne keskeyttävät skriptin suorituksen eivätkä anna vierailijan käyttää muuta sivua ennen kuin ikkuna on suljettu.
 
-There are two limitations shared by all the methods above:
+Kaikilla yllä olevilla metodeilla on kaksi yhteistä rajoitusta:
 
-1. The exact location of the modal window is determined by the browser. Usually, it's in the center.
-2. The exact look of the window also depends on the browser. We can't modify it.
+1. Selain päättää modaali-ikkunan tarkan sijainnin. Yleensä se on keskellä.
+2. Myös ikkunan tarkka ulkoasu riippuu selaimesta. Emme voi muuttaa sitä.
 
-That is the price for simplicity. There are other ways to show nicer windows and richer interaction with the visitor, but if "bells and whistles" do not matter much, these methods work just fine.
+Se on yksinkertaisuuden hinta. On muitakin tapoja näyttää hienompia ikkunoita ja monipuolisempaa vuorovaikutusta vierailijan kanssa, mutta jos kaikenlaisilla kilkkeillä ei ole paljon väliä, nämä metodit toimivat aivan hyvin.

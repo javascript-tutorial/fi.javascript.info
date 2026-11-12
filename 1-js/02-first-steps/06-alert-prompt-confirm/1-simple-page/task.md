@@ -2,8 +2,8 @@ importance: 4
 
 ---
 
-# A simple page
+# Yksinkertainen sivu
 
-Create a web-page that asks for a name and outputs it.
+Tee verkkosivu, joka kysyy nimeä ja tulostaa sen.
 
 [demo]

@@ -1,11 +1,11 @@
-JavaScript-code:
+JavaScript-koodi:
 
 ```js demo run
-let name = prompt("What is your name?", "");
+let name = prompt("Mikä on nimesi?", "");
 alert(name);
 ```
 
-The full page:
+Koko sivu:
 
 ```html
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ The full page:
   <script>
     'use strict';
 
-    let name = prompt("What is your name?", "");
+    let name = prompt("Mikä on nimesi?", "");
     alert(name);
   </script>
 
