@@ -8,7 +8,7 @@ Muuttujaan voi laittaa mitä tahansa tyyppiä olevan arvon. Muuttujassa voi esim
 
 ```js
 // ei virhettä
-let message = "hello";
+let message = "hei";
 message = 123456;
 ```
 
@@ -43,7 +43,7 @@ Tavallisten lukujen lisäksi on niin sanottuja "erityisiä numeerisia arvoja", j
 - `NaN` tarkoittaa laskuvirhettä. Se on virheellisen tai määrittelemättömän matemaattisen operaation tulos, esimerkiksi:
 
     ```js run
-    alert( "not a number" / 2 ); // NaN, tällainen jakolasku on virheellinen
+    alert( "ei luku" / 2 ); // NaN, tällainen jakolasku on virheellinen
     ```
 
     `NaN` on "tarttuva". Mikä tahansa myöhempi matemaattinen operaatio `NaN`:lle palauttaa `NaN`:
@@ -51,7 +51,7 @@ Tavallisten lukujen lisäksi on niin sanottuja "erityisiä numeerisia arvoja", j
     ```js run
     alert( NaN + 1 ); // NaN
     alert( 3 * NaN ); // NaN
-    alert( "not a number" / 2 - 1 ); // NaN
+    alert( "ei luku" / 2 - 1 ); // NaN
     ```
 
     Jos siis matemaattisessa lausekkeessa on jossain `NaN`, se leviää koko tulokseen (tähän on vain yksi poikkeus: `NaN ** 0` on `1`).
@@ -99,16 +99,16 @@ Koska `BigInt`-lukuja tarvitaan harvoin, emme käsittele niitä tässä, vaan ni
 JavaScriptissa merkkijonon täytyy olla lainausmerkkien sisällä.
 
 ```js
-let str = "Hello";
-let str2 = 'Single quotes are ok too';
-let phrase = `can embed another ${str}`;
+let str = "Hei";
+let str2 = 'Yksinkertaiset lainausmerkit käyvät myös';
+let phrase = `voi upottaa toisen ${str}`;
 ```
 
 JavaScriptissa on kolmenlaisia lainausmerkkejä.
 
-1. Kaksinkertaiset lainausmerkit: `"Hello"`.
-2. Yksinkertaiset lainausmerkit: `'Hello'`.
-3. Takahipsut (engl. backticks): <code>&#96;Hello&#96;</code>.
+1. Kaksinkertaiset lainausmerkit: `"Hei"`.
+2. Yksinkertaiset lainausmerkit: `'Hei'`.
+3. Takahipsut (engl. backticks): <code>&#96;Hei&#96;</code>.
 
 Kaksinkertaiset ja yksinkertaiset lainausmerkit ovat "tavallisia" lainausmerkkejä. JavaScriptissa niiden välillä ei käytännössä ole eroa.
 
@@ -118,17 +118,17 @@ Takahipsut ovat "laajennetun toiminnallisuuden" lainausmerkit. Niiden avulla mer
 let name = "John";
 
 // upotetaan muuttuja
-alert( `Hello, *!*${name}*/!*!` ); // Hello, John!
+alert( `Hei, *!*${name}*/!*!` ); // Hei, John!
 
 // upotetaan lauseke
-alert( `the result is *!*${1 + 2}*/!*` ); // the result is 3
+alert( `tulos on *!*${1 + 2}*/!*` ); // tulos on 3
 ```
 
 Merkintöjen `${…}` sisällä oleva lauseke arvioidaan, ja tuloksesta tulee osa merkkijonoa. Sinne voi laittaa mitä tahansa: muuttujan kuten `name`, laskutoimituksen kuten `1 + 2` tai jotain monimutkaisempaa.
 
 Huomaa, että tämä onnistuu vain takahipsujen kanssa. Muissa lainausmerkeissä tällaista upotusta ei ole!
 ```js run
-alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (kaksinkertaiset lainausmerkit eivät tee mitään)
+alert( "tulos on ${1 + 2}" ); // tulos on ${1 + 2} (kaksinkertaiset lainausmerkit eivät tee mitään)
 ```
 
 Käsittelemme merkkijonoja perusteellisemmin kappaleessa <info:string>.

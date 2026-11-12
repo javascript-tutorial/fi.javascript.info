@@ -9,9 +9,9 @@ Mitä skripti tulostaa?
 ```js
 let name = "Ilya";
 
-alert( `hello ${1}` ); // ?
+alert( `hei ${1}` ); // ?
 
-alert( `hello ${"name"}` ); // ?
+alert( `hei ${"name"}` ); // ?
 
-alert( `hello ${name}` ); // ?
+alert( `hei ${name}` ); // ?
 ```

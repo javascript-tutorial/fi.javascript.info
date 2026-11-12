@@ -5,11 +5,11 @@ Takahipsut upottavat merkkijonoon merkintöjen `${...}` sisällä olevan lausekk
 let name = "Ilya";
 
 // lauseke on luku 1
-alert( `hello ${1}` ); // hello 1
+alert( `hei ${1}` ); // hei 1
 
 // lauseke on merkkijono "name"
-alert( `hello ${"name"}` ); // hello name
+alert( `hei ${"name"}` ); // hei name
 
 // lauseke on muuttuja, upotetaan se
-alert( `hello ${name}` ); // hello Ilya
+alert( `hei ${name}` ); // hei Ilya
 ```
